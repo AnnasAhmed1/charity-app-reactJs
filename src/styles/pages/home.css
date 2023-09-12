@@ -1,0 +1,132 @@
+
+
+.home-main .bg-image:nth-child(2) {
+    bottom: 0px;
+    width: 120px;
+}
+
+.bg-image:nth-child(3) {
+    bottom: 0px;
+    right: 0px;
+    width: 300px;
+}
+
+
+
+
+
+.home-head {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--light);
+    text-transform: capitalize;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+.home-main .home-details {
+    display: flex;
+}
+
+
+
+.home-main .home-details>form>div {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.home-main .home-details>form label,
+.home-main .home-details>form input,
+.home-main .home-details>form select {
+    display: block;
+    font-size: 14px;
+    color: var(--textPrimary);
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+.home-main .home-details>form input,
+.home-main .home-details>form select {
+    border: none;
+    border-radius: 3px;
+    padding: 6px 5px;
+    background-color: rgb(251, 240, 240);
+    width: 100%;
+}
+
+.home-main .home-details>form .payment-radio-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120%;
+    padding-top: 10px;
+}
+
+.home-main .home-details>form .payment-radio-buttons input {
+    padding: 5px;
+    width: 15px;
+    height: 15px;
+    display: block;
+}
+
+.home-main .home-details>form .payment-radio-buttons label {
+    margin-right: 20px;
+}
+
+.home-main .home-details>form {
+    flex: 2;
+    padding: 20px 40px;
+    background-color: var(--light);
+}
+
+.home-main .home-details>form>button {
+    margin-top: 20px;
+}
+
+.home-main .home-details {
+    margin-bottom: 10px;
+}
+
+.home-main .home-details>div {
+    background-color: var(--dark);
+    flex: 1;
+    padding: 20px 40px;
+}
+
+.home-main .causes {
+    display: flex;
+    gap: 12px;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo-container>div {
+    flex: 1;
+}
+
+.logo-container>div>img {
+    width: 100%;
+}
+
+.home-main .articles-section .articles-container {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+}

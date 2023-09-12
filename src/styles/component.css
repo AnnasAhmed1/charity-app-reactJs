@@ -1,0 +1,401 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    color: #ffffff;
+}
+
+.navbar>img {
+    width: 130px;
+}
+
+
+.navbar>ul {
+    gap: 30px;
+    flex: 1;
+
+}
+
+.navbar>div {
+    gap: 10px;
+}
+
+.transparent li,
+.transparent a,
+.transparent p {
+    color: #ffffff;
+}
+
+.transparent .active {
+    text-decoration: underline;
+}
+
+.navbar .searchButton {
+
+    border: 1px solid #000000;
+    padding: 11.5px;
+}
+
+.transparent .searchButton {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+.footer {
+    background-color: #22262F;
+
+
+}
+
+.footer .rating {
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 600;
+    color: var(--light);
+}
+
+.footer>div {
+    display: flex;
+    gap: 50px;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.footer h4,
+.footer .logo {
+    margin-bottom: 20px;
+}
+
+.footer h4:nth-last-child(2) {
+    margin-bottom: 5px;
+}
+
+.footer .logo {
+    width: 130px;
+}
+
+.footer .footer-details {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    /* gap: 20px; */
+}
+
+.footer .footer-details>div {
+
+    flex: 1;
+}
+
+.footer .footer-newsletter>div {
+    display: flex;
+    width: 100%;
+}
+
+.footer .footer-newsletter>div>input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+
+}
+
+.footer .footer-newsletter>p {
+    margin-bottom: 20px
+}
+
+.footer .contact-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer .contact-icons .MuiSvgIcon-root {
+    background-color: #ffffff;
+    font-size: 32px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.trapezium {
+    position: absolute;
+    width: 45%;
+    height: 100%;
+    background-color: var(--primary);
+    clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 0% 100%);
+    z-index: -1;
+}
+
+.patch-image {
+    bottom: 0px;
+    right: 0px;
+    width: 300px;
+}
+
+.section1 {
+    padding-bottom: 20px;
+    z-index: -2;
+}
+
+.subheading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.subheading>div {
+    border: 0.5px solid var(--textPrimary);
+    width: 60px;
+}
+
+.cause-card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.cause-card .text-container {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cause-card .image-container {
+    width: 100%;
+    height: 200px;
+    background-color: #D9D9D9;
+
+}
+
+.cause-card .image-container img {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 80%;
+
+}
+
+.cause-card .progress-container>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cause-card button {
+    /* margin-top: 100%; */
+    padding: 5px 24px;
+    width: fit-content;
+}
+
+.cause-card .progressbar {
+    margin: 5px 0;
+    width: 100%;
+    height: 8px;
+    background: #C7E7DF;
+}
+
+.cause-card .progressbar>div {
+    background-color: var(--primary);
+    height: 8px;
+}
+
+.fact-card {
+    /* background-color: rgba(37, 42, 52, 0.08); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px 0;
+    /* height: 400px; */
+    gap: 20px;
+}
+
+.facts-container {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    /* margin: 30px 0; */
+}
+
+.fact-card>h1 {
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 700;
+    font-family: "Nunito";
+}
+
+.fact-card>img {
+    width: 120px;
+}
+
+.article-card {
+    width: 100%;
+    box-shadow: 0px 10px 30px 0px rgba(37, 42, 52, 0.08);
+
+}
+
+.article-card .grey-container {
+    width: 100%;
+    height: 225px;
+    background-color: #D9D9D9;
+}
+
+.article-card .text-container {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article-card .flex-between {
+    display: flex;
+}
+
+.article-card .flex-between>p {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: #999999
+}
+
+.article-card button {
+    margin-top: auto;
+    padding: 5px 24px;
+    width: fit-content;
+}
+
+
+
+/* charity section and about section */
+
+.about-section {
+    display: flex;
+    gap: 50px;
+}
+
+.about-section>div {
+    flex: 1;
+}
+
+.about-section .data-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.combined-container>div:nth-child(1) {
+    width: 350px;
+    height: 350px;
+    border: 10px solid rgba(195, 44, 62, 0.2);
+    position: relative;
+    background-color: #D9D9D9;
+    margin-bottom: 80px;
+}
+
+.combined-container>div>div {
+    width: 250px;
+    height: 250px;
+    border: 10px solid rgba(195, 44, 62, 0.2);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: #D9D9D9;
+
+}
+
+.combined-container>div>div img {
+    position: absolute;
+    width: 150px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.charity-progress-container>div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.charity-progress-container .progress {
+    width: 100%;
+    height: 8px;
+    background-color: #DCDCDC;
+    margin: 10px 0px;
+}
+
+.charity-progress-container .progress>div {
+    height: 8px;
+    background-color: var(--primary);
+}
+
+.white-text-container {
+    font-size: 14px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.white-text-container>ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    text-transform: capitalize;
+}
+
+/* testiomonial-section */
+
+.testimonial-conatainer {
+    background-color: rgba(37, 42, 52, 0.85);
+
+}
+
+.testimonial-conatainer>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.testimonial-conatainer .horizontal-line {
+    border-color: #ffffff;
+}
+
+.testimonial-conatainer .circle {
+    width: 100px;
+    height: 100px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+}
+
+.feature-card {
+    padding: 30px 20px;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feature-card .image-container {
+    padding: 15px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.feature-card li {
+    margin: 10px 0;
+}
+
+.feature-card .image-container>img {
+    width: 100%;
+
+}

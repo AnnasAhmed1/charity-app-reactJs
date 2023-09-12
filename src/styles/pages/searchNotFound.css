@@ -1,0 +1,29 @@
+.search-notFound-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background-color: #252A3414;
+    min-height: 100vh;
+}
+
+.search-notFound-section .input-container {
+    display: flex;
+    background-color: #ffffff;
+    padding: 6px 12px;
+    width: 300px;
+    box-shadow: 0px 4px 20px 0px rgba(33, 157, 128, 0.15);
+    margin: 10px 0;
+
+}
+
+.search-notFound-section .input-container button {
+    display: flex;
+
+}
+
+.search-notFound-section .input-container input {
+    width: 100%;
+    border: none;
+}

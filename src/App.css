@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
+* {
+    padding: 0%;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+:root {
+    --primary: #C32C3E;
+    --textPrimary: #252A34;
+    --textLight: #AFAFAF;
+    --light: #ffffff;
+    --dark: #000000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#root {
+    overflow-x: hidden !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Montserrat */
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../public/fonts/Montserrat/static/Montserrat-Light.ttf') format('tff');
+    font-weight: 300;
+    font-style: normal;
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../public/fonts/Montserrat/static/Montserrat-Regular.ttf') format('tff');
+    font-weight: 400;
+    font-style: normal;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../public/fonts/Montserrat/static/Montserrat-Italic.ttf') format('tff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../public/fonts/Montserrat/static/Montserrat-Medium.ttf') format('tff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../public/fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('tff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../public/fonts/Montserrat/static/Montserrat-Bold.ttf') format('tff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Playfair Display */
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../public/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf') format('tff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../public/fonts/Playfair_Display/static/PlayfairDisplay-Italic.ttf') format('tff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../public/fonts/Playfair_Display/static/PlayfairDisplay-Medium.ttf') format('tff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../public/fonts/Playfair_Display/static/PlayfairDisplay-SemiBold.ttf') format('tff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../public/fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf') format('tff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Nunito */
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../public/fonts/Nunito/static/Nunito-Light.ttf') format('tff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../public/fonts/Nunito/static/Nunito-Regular.ttf') format('tff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../public/fonts/Nunito/static/Nunito-Italic.ttf') format('tff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../public/fonts/Nunito/static/Nunito-Medium.ttf') format('tff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../public/fonts/Nunito/static/Nunito-SemiBold.ttf') format('tff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../public/fonts/Nunito/static/Nunito-Bold.ttf') format('tff');
+    font-weight: 700;
+    font-style: normal;
 }

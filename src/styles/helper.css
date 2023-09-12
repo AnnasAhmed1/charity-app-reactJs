@@ -1,0 +1,52 @@
+.helper-h1 {
+    font-size: 72px;
+    line-height: 90px;
+}
+
+.helper-h2 {
+    font-size: 39px;
+    line-height: 50px;
+}
+
+.helper-h3 {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.helper-h4 {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.helper-h5 {
+    font-size: 48px;
+    line-height: 60px;
+}
+
+.helper-p1 {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.helper-p2 {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.helper-p3 {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.helper-p4 {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.helper-button {
+    padding: 12px 24px;
+}
+
+.helper-button-thin {
+    padding: 4px 16px;
+}
