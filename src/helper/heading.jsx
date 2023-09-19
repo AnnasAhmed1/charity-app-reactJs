@@ -119,3 +119,28 @@ export const H5 = ({
     </h5>
   );
 };
+export const H6 = ({
+  text = "",
+  center = false,
+  underline = false,
+  fontWeight = "600",
+  color = "",
+
+  style = {},
+}) => {
+  return (
+    <h6
+      style={{
+        textAlign: center ? "center" : "left",
+        textDecoration: underline ? "underline" : "",
+        fontWeight,
+        color: `var(--${color})`,
+
+        ...style,
+      }}
+      className="helper-h6"
+    >
+      {text}
+    </h6>
+  );
+};

@@ -1,0 +1,92 @@
+.blog-main .grey-container {
+    height: 350px;
+}
+
+.blog-container {
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+}
+
+.blog-container>section:nth-child(1) {
+    flex: 2;
+}
+
+.blog-container>section:nth-child(2) {
+    flex: 1.1;
+}
+
+.blog-main .donate-detail {
+    width: 80%;
+    margin: 20px 0;
+}
+
+.blog-main .blog-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.blog-main .testimonial-conatainer {
+    margin-bottom: 40px;
+}
+
+.blog-main .blog-category-container ul li:nth-child(1) {
+    border-top: 1px solid #E3E3E3;
+
+
+}
+
+.blog-main .blog-category-container ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E3E3E3;
+    padding: 8px 0;
+
+}
+
+.blog-main .blog-category-container {
+    padding: 30px 15px;
+    background-color: #252A3414;
+    margin-bottom: 90px;
+}
+
+.blog-main .blog-category-container h6 {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-bottom: 25px;
+}
+
+.half-unnderline-text {
+    margin-top: 5px;
+    width: 60%;
+    height: 1.5px;
+    background-color: var(--primary);
+    display: block;
+}
+
+.blog-main .blog-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.blog-main .blog-post div:nth-child(1) {
+    flex: 1;
+}
+
+.blog-main .blog-post div:nth-child(2) {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.blog-main .blog-category-container .grey-container {
+    height: 110px;
+}

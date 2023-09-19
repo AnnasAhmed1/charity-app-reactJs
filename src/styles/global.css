@@ -50,7 +50,7 @@ button {
 }
 
 body .container {
-    max-width: 1000px;
+    max-width: 1150px;
     position: relative;
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
