@@ -24,8 +24,7 @@ const SerachNotFound = () => {
           </div>
           <ButtonComp
             text="Or Back To Home Page"
-            bgColor=""
-            color="primary"
+            white
             thin
             style={{
               border: "1px solid var(--primary)",

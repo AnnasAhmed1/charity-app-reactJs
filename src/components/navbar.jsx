@@ -89,7 +89,6 @@ const Navbar = ({ home = false, light = false }) => {
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}
-        
       >
         {/* <ul className="flex hide-tablet"> */}
         <MenuItem
@@ -213,7 +212,7 @@ const Navbar = ({ home = false, light = false }) => {
         >
           <SearchIcon />
         </button>
-        <button onClick={handleClick}>
+        <button onClick={handleClick} className="show-tablet">
           <MenuIcon style={{ color: "#ffffff" }} />
         </button>
       </div>
