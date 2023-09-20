@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PageHead from "../components/pageHead";
 import FooterComp from "../components/footerComp";
 import { H2, H6 } from "../helper/heading";
@@ -15,6 +15,7 @@ import { P1, P2, P3, P4 } from "../helper/paragraph";
 import TestimonialsSection from "../components/testimonialsSection";
 import ButtonComp from "../helper/button";
 import DonateModal from "../components/donateModal";
+import { scrollToSection } from "../config/function";
 
 const Donate = () => {
   const [open, setOpen] = useState(false);
@@ -54,6 +55,9 @@ const Donate = () => {
     { title: "Education" },
     { title: "Water" },
   ];
+  useEffect(() => {
+    scrollToSection();
+  }, []);
   return (
     <>
       <main className="blog-main">

@@ -8,6 +8,7 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import { Link } from "react-router-dom";
 
 const FooterComp = () => {
   return (
@@ -48,15 +49,25 @@ const FooterComp = () => {
           <div className="footer-details">
             <div>
               <H4 color="light" text="Quick Link" />
-              <P3 color="textLight" text="Home" />
-              <P3 color="textLight" text="About us" />
-              <P3 color="textLight" text="Blog post" />
+              <Link to={"/"}>
+                <P3 color="textLight" text="Home" />
+              </Link>
+              <Link to={"/about"}>
+                <P3 color="textLight" text="About us" />
+              </Link>
+              <Link to="/blog">
+                <P3 color="textLight" text="Blog post" />
+              </Link>
               <P3 color="textLight" text="Photo gallery" />
             </div>
             <div>
               <H4 color="light" text="Get In Touch" />
-              <P3 color="textLight" text="Contact us" />
-              <P3 color="textLight" text="Our services" />
+              <Link to={"/contact"}>
+                <P3 color="textLight" text="Contact us" />
+              </Link>
+              <Link>
+                <P3 color="textLight" text="Our services" />
+              </Link>
             </div>
             <div>
               <H4 color="light" text="Address" />

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PageHead from "../components/pageHead";
 import SubHeading from "../components/subHeading";
 import { H2 } from "../helper/heading";
 import CauseCard from "../components/causeCard";
 import "../styles/pages/causes.css";
 import FooterComp from "../components/footerComp";
+import { scrollToSection } from "../config/function";
 const Causes = () => {
   const causeData = [
     {
@@ -64,6 +65,9 @@ const Causes = () => {
       raised: "$1,500",
     },
   ];
+  useEffect(() => {
+    scrollToSection();
+  }, []);
   return (
     <>
       <main className="causes-main">

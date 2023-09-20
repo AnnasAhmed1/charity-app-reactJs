@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/navbar";
 import { H2, H5 } from "../helper/heading";
 import { P1 } from "../helper/paragraph";
@@ -11,6 +11,7 @@ import FeatureCard from "../components/featureCard";
 import "../styles/pages/about.css";
 import FooterComp from "../components/footerComp";
 import PageHead from "../components/pageHead";
+import { scrollToSection } from "../config/function";
 
 const About = () => {
   const featureData = [
@@ -31,6 +32,9 @@ const About = () => {
       itemsCount: 4,
     },
   ];
+  useEffect(() => {
+    scrollToSection();
+  }, []);
   return (
     <>
       <main className="about-main">

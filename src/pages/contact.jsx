@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PageHead from "../components/pageHead";
 import FooterComp from "../components/footerComp";
 import SubHeading from "../components/subHeading";
@@ -6,8 +6,12 @@ import { H2 } from "../helper/heading";
 import ButtonComp from "../helper/button";
 import "../styles/pages/contact.css";
 import { P4 } from "../helper/paragraph";
+import { scrollToSection } from "../config/function";
 
 const Contact = () => {
+  useEffect(() => {
+    scrollToSection();
+  }, []);
   return (
     <>
       <main className="contact-main">

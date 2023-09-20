@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PageHead from "../components/pageHead";
 import FooterComp from "../components/footerComp";
 import { H2, H6 } from "../helper/heading";
@@ -13,6 +13,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 import "../styles/pages/blog.css";
 import { P1, P2, P3, P4 } from "../helper/paragraph";
 import TestimonialsSection from "../components/testimonialsSection";
+import { scrollToSection } from "../config/function";
 
 const Blog = () => {
   const categories = [
@@ -51,6 +52,9 @@ const Blog = () => {
     { title: "Education" },
     { title: "Water" },
   ];
+  useEffect(() => {
+    scrollToSection();
+  }, []);
   return (
     <>
       <main className="blog-main">

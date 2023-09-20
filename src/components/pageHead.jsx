@@ -5,7 +5,7 @@ import { P1 } from "../helper/paragraph";
 
 const PageHead = ({ page = "", subNav }) => {
   return (
-    <section className="bgGray relative section1">
+    <section className="bgGray relative section1" id="top">
       <div className="trapezium absolute"></div>
 
       <img

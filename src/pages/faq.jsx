@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PageHead from "../components/pageHead";
 import SubHeading from "../components/subHeading";
 import { H2, H6 } from "../helper/heading";
@@ -7,6 +7,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import "../styles/pages/faq.css";
 import { P3 } from "../helper/paragraph";
 import FooterComp from "../components/footerComp";
+import { scrollToSection } from "../config/function";
 
 const Faq = () => {
   const [active, setActive] = useState(null);
@@ -61,6 +62,9 @@ const Faq = () => {
       setActive(index);
     }
   };
+  useEffect(() => {
+    scrollToSection();
+  }, []);
   return (
     <>
       <main className="faq-main">

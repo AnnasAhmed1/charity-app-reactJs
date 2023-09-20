@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/pages/home.css";
 import "../styles/global.css";
 import Navbar from "../components/navbar";
@@ -14,6 +14,7 @@ import CharitySection from "../components/charitySection";
 import AboutSection from "../components/aboutSection";
 import Funfacts from "../components/funfacts";
 import TestimonialsSection from "../components/testimonialsSection";
+import { scrollToSection } from "../config/function";
 
 // 861
 // 1059
@@ -68,10 +69,13 @@ const Home = () => {
       heading: "Why You Should Focus on Charity",
     },
   ];
+  useEffect(() => {
+    scrollToSection();
+  }, []);
   return (
     <>
       <main className="home-main">
-        <section className="bgGray relative section1">
+        <section className="bgGray relative section1" id="top">
           <div className="trapezium absolute"></div>
           <img
             src={require("../assets/home_lines.png")}
