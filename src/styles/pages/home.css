@@ -9,10 +9,6 @@
     width: 300px;
 }
 
-
-
-
-
 .home-head {
     z-index: 2;
     display: flex;
@@ -25,6 +21,13 @@
     margin-bottom: 35px;
 }
 
+@media (max-width: 768px) {
+    .home-head {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+}
+
 .home-main .home-details {
     display: flex;
 }
@@ -32,11 +35,17 @@
 
 
 .home-main .home-details>form>div {
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
 }
+
+@media (max-width: 992px) {
+    .home-main .home-details>form>div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 
 .home-main .home-details>form label,
 .home-main .home-details>form input,
@@ -63,6 +72,19 @@
     align-items: center;
     width: 120%;
     padding-top: 10px;
+}
+
+@media (max-width: 576px) {
+    .home-main .home-details>form>div {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .home-main .home-details>form .payment-radio-buttons {
+        width: 100%;
+        justify-content: start;
+        gap: 10px;
+    }
+
 }
 
 .home-main .home-details>form .payment-radio-buttons input {
@@ -96,14 +118,38 @@
     background-color: var(--dark);
     flex: 1;
     padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.home-main .home-details>div button {
+    width: fit-content;
+
+}
+
+@media (max-width: 992px) {
+
+    .home-main .home-details>form,
+    .home-main .home-details>div {
+        padding: 20px 20px;
+    }
+
+    .home-main .bg-image:nth-child(2) {
+        width: 100px;
+    }
+
+    .bg-image:nth-child(3) {
+        width: 250px;
+    }
 }
 
 .home-main .causes {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
     margin-top: 50px;
 }
-
 
 
 
@@ -126,7 +172,24 @@
 }
 
 .home-main .articles-section .articles-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     margin: 30px 0;
+}
+
+@media (max-width: 768px) {
+
+    .home-main .articles-section .articles-container,
+    .home-main .causes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+
+    .home-main .articles-section .articles-container,
+    .home-main .causes {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

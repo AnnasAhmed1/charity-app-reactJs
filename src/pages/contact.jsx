@@ -16,10 +16,10 @@ const Contact = () => {
     <>
       <main className="contact-main">
         <PageHead page="Contact Us" />
-        <section className="container main-section ">
+        <section className="container main-section">
           <SubHeading text="Get in Touch" />
           <H2 text="Send Me a Message" />
-          <div className="contact-container">
+          <div className="contact-container flex-responsive">
             <form action="">
               <div>
                 <div>

@@ -35,7 +35,7 @@ const FooterComp = () => {
         </div>
       </section>
       <footer className="footer">
-        <div className="container/ main-section">
+        <div className="container/ main-section flex-responsive">
           <div>
             <img
               className="logo"

@@ -67,9 +67,9 @@ const Donate = () => {
         />
         <DonateModal open={open} setOpen={setOpen} />
         <div className="container">
-          <section className="main-section">
+          <section className="main-section ">
             <H2 text="Donating Poor People." />
-            <div className="blog-container">
+            <div className="blog-container flex-responsive">
               <section>
                 <div className="grey-container"></div>
                 <div

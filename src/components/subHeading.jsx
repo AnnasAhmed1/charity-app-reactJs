@@ -5,7 +5,7 @@ const SubHeading = ({ text = "" }) => {
   return (
     <div className="subheading">
       <P2 text={text} />
-      <div class="horizontal-line"></div>
+      <div className="horizontal-line"></div>
     </div>
   );
 };

@@ -8,10 +8,6 @@
     gap: 80px;
 }
 
-.faq-main .faq-container>div {
-    flex: 1;
-}
-
 .faq-main .faq-container>ul {
     background-color: var(--light);
     flex: 1.2;
@@ -25,6 +21,19 @@
     background-color: #D9D9D9;
     transition: all 0.5s ease;
 }
+
+@media(max-width:768px) {
+    .faq-main .faq-container {
+        gap: 50px;
+    }
+
+    .faq-main .faq-container .image-container {
+        width: 325px;
+        height: 325px;
+    }
+
+}
+
 
 
 .faq-main .faq-container ul>li {
@@ -75,6 +84,18 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 30px;
+}
+
+@media(max-width:576px) {
+    .faq-main .faq-container .image-container {
+        width: 90%;
+        max-width: 275px;
+        height: 275px;
+    }
+
+    .faq-main .help-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .faq-main .help-container>div {

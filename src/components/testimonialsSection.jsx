@@ -10,9 +10,9 @@ const TestimonialsSection = ({ text, head = true }) => {
           <>
             {" "}
             <div className="subheading">
-              <div class="horizontal-line"></div>
+              <div className="horizontal-line"></div>
               <P2 text="Our Testimonials" color="light" center />
-              <div class="horizontal-line"></div>
+              <div className="horizontal-line"></div>
             </div>
             <H2 text="What People Say" color="light" center />
           </>

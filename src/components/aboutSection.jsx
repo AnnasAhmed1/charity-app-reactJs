@@ -7,7 +7,7 @@ import ButtonComp from "../helper/button";
 
 const AboutSection = () => {
   return (
-    <section className="main-section about-section">
+    <section className="main-section about-section flex-responsive flex-reverse">
       <div className="combined-container">
         <div>
           <div>

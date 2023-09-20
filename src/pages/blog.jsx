@@ -62,7 +62,7 @@ const Blog = () => {
         <div className="container">
           <section className="main-section">
             <H2 text="Donating Poor People." />
-            <div className="blog-container">
+            <div className="blog-container flex-responsive">
               <section>
                 <div className="grey-container"></div>
                 <div className="flex-between donate-detail">

@@ -79,7 +79,7 @@ const Faq = () => {
           <div className="container">
             <SubHeading text="Have any Question?" />
             <H2 text="Frequently Asked Questions" />
-            <div className="faq-container">
+            <div className="faq-container flex-responsive">
               <div className="image-container"></div>
               <ul className="faq">
                 {faqs?.map((faq, index) => {

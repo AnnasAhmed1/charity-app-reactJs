@@ -33,6 +33,17 @@
     /* gap: 30px; */
 }
 
+@media (max-width:576px) {
+    .contact-main .contact-container {
+        gap: 20px;
+    }
+
+    .contact-main form>div {
+
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
 .contact-main form label {
     margin-bottom: 10px;
 }

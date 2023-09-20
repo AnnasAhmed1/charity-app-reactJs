@@ -91,22 +91,21 @@ const Home = () => {
           <div className="container ">
             <div className="home-head">
               <P1 text="Give Hope For Homeless" center color="light" />
-              <H1 text="Helping Each Other" center color="light" />
-              <H1 text="Can Make World Better" center color="light" />
+              <H1
+                text="Helping Each Other Can Make World Better"
+                center
+                color="light"
+              />
+              <H1 text="" center color="light" />
               <P2
-                text="We Seek out world changers and difference makers around the"
+                text="We Seek out world changers and difference makers around the globe,and equip them to fulfill their unique purpose."
                 center
                 color="light"
                 fontWeight="400"
               />
-              <P2
-                text="globe,and equip them to fulfill their unique purpose."
-                center
-                color="light"
-                fontWeight="400"
-              />
+              <P2 text="" center color="light" fontWeight="400" />
             </div>
-            <div className="home-details">
+            <div className="home-details flex-responsive">
               <form>
                 <div>
                   <div>
@@ -118,7 +117,7 @@ const Home = () => {
                     <input type="text" id="email" />
                   </div>
                   <div>
-                    <label for="cause">Select Cause</label>
+                    <label htmlFor="cause">Select Cause</label>
                     <select name="cause" id="cause">
                       <option>Educations</option>
                       <option>Educations</option>
@@ -126,7 +125,7 @@ const Home = () => {
                     </select>
                   </div>
                   <div>
-                    <label for="amount">Amount</label>
+                    <label htmlFor="amount">Amount</label>
                     <select name="amount" id="amount">
                       <option>$ 5</option>
                       <option>$ 5</option>
@@ -143,21 +142,21 @@ const Home = () => {
                         name="fav_language"
                         value="HTML"
                       />
-                      <label for="html">One Time</label>
+                      <label htmlFor="html">One Time</label>
                       <input
                         type="radio"
                         id="css"
                         name="fav_language"
                         value="CSS"
                       />
-                      <label for="css">Monthly</label>
+                      <label htmlFor="css">Monthly</label>
                       <input
                         type="radio"
                         id="javascript"
                         name="fav_language"
                         value="JavaScript"
                       />
-                      <label for="javascript">Annualy</label>
+                      <label htmlFor="javascript">Annualy</label>
                     </div>
                   </div>
                 </div>

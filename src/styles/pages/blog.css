@@ -113,9 +113,9 @@
     border-bottom: 2px solid var(--textLight);
     padding: 5px 20px;
     border-radius: 0px;
-    /* padding: 5px 0; */
-
 }
+
+
 
 .blog-main .blog-login-section>div:nth-child(1)>p:nth-child(1) {
     border-bottom: 2px solid var(--primary);
@@ -154,6 +154,26 @@
     width: 90%;
     margin-left: auto;
 
+}
+
+@media (max-width:576px) {
+    .blog-main .blog-login-section>div:nth-child(1)>p {
+        padding: 5px 5px;
+    }
+
+    .blog-main .blog-login-section>div,
+    .blog-main .blog-login-section>form {
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .blog-main .blog-category-container {
+        margin-bottom: 40px;
+    }
+
+    .blog-main .blog-login-section .login-icons {
+        width: 100%;
+    }
 }
 
 .blog-main .blog-login-section .login-icons .MuiSvgIcon-root {

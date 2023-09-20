@@ -11,6 +11,7 @@ const ButtonComp = ({
   white = false,
   hover = true,
   style = {},
+  className = "",
 }) => {
   return (
     <button
@@ -20,7 +21,7 @@ const ButtonComp = ({
       } 
       ${hover ? (white ? "white-button" : "primary-button") : null}
       
-      flex`}
+      flex ${className}`}
       style={{
         backgroundColor: `var(--${bgColor})`,
         cursor: "pointer",

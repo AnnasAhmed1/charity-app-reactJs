@@ -6,7 +6,7 @@ import "../styles/component.css";
 
 const CharitySection = () => {
   return (
-    <section className="main-section about-section">
+    <section className="main-section about-section flex-responsive">
       <div className="data-container">
         <SubHeading text="Welcome to Charity" />
         <H2 text="Let Us Come Together To Make a Difference" />

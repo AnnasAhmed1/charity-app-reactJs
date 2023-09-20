@@ -11,7 +11,6 @@ const DonateModal = ({ open, setOpen }) => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: "50%",
     bgcolor: "#ffffff",
     border: "2px solid #000",
     boxShadow: 24,
@@ -35,7 +34,7 @@ const DonateModal = ({ open, setOpen }) => {
             cursor: "pointer",
           }}
           onClick={handleClose}
-          className="absolute"
+          className=" absolute"
         >
           <CloseIcon />
         </button>
@@ -46,32 +45,28 @@ const DonateModal = ({ open, setOpen }) => {
               borderBottom: "1px solid #DDDDDD",
             }}
           />
-          <div
-            style={{
-              width: "75%",
-            }}
-            className="flex"
-          >
-            <label htmlFor="amount">
-              <ButtonComp text="$" hover={false} />
-            </label>
-            <input type="text" name="amount" id="amount" />
+          <div className="custom-amount">
+            <div>
+              <label htmlFor="amount">
+                <ButtonComp text="$" hover={false} />
+              </label>
+              <input
+                style={{
+                  height: "auto",
+                }}
+                type="text"
+                name="amount"
+                id="amount"
+              />
+            </div>
             <ButtonComp
               text="CastomeAmount"
               style={{
                 wordBreak: "keep-all",
-                marginLeft: "20px",
               }}
             />
           </div>
-          <div
-            style={{
-              width: "75%",
-              display: "flex",
-              gap: "15px",
-              marginTop: "20px",
-            }}
-          >
+          <div className="amount-buttons" style={{}}>
             <ButtonComp
               text="$10:00"
               white
@@ -121,18 +116,47 @@ const DonateModal = ({ open, setOpen }) => {
               paddingBottom: "0px",
             }}
           />
-          <input type="radio" name="gender" value="" id="testDonation" />
-          <label htmlFor="testDonation"> Test donation</label>
-          <input
-            type="radio"
-            name="gender"
-            value=""
-            id="offlineDonation"
-            style={{
-              marginLeft: "30px",
-            }}
-          />
-          <label htmlFor="offlineDonation"> Offlile Donation</label>
+          <div className="radio-button-container">
+            <input
+              style={{
+                display: "block",
+              }}
+              type="radio"
+              name="gender"
+              value=""
+              id="testDonation"
+            />
+            <label
+              style={{
+                display: "block",
+              }}
+              className="test-dontation-label"
+              htmlFor="testDonation"
+            >
+              Test donation
+            </label>
+          </div>
+          <div className="radio-button-container">
+            <input
+              type="radio"
+              name="gender"
+              value=""
+              id="offlineDonation"
+              className="right-radio"
+              style={{
+                display: "block",
+              }}
+            />
+            <label
+              style={{
+                display: "block",
+              }}
+              htmlFor="offlineDonation"
+            >
+              {" "}
+              Offlile Donation
+            </label>
+          </div>
         </div>
         <div className="personal-info">
           <H6
@@ -154,20 +178,16 @@ const DonateModal = ({ open, setOpen }) => {
           <textarea name="" id="" placeholder="Leave A comment..."></textarea>
           <div>
             <input type="checkbox" id="terms" name="checkbox" value="1" />
-            <label for="terms"> Agree to Terms?</label>
+            <label htmlFor="terms"> Agree to Terms?</label>
           </div>
-          <div
-            style={{
-              width: "50%",
-            }}
-            className="flex"
-          >
+          <div style={{}} className="total-donation-container">
             <input
               type="text"
               value={"Donation Total:"}
               disabled
               style={{
                 color: "var(--textPrimary)",
+                height: "auto",
               }}
             />
             <ButtonComp text="$10.00" hover={false} />
