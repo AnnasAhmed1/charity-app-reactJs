@@ -90,3 +90,74 @@
 .blog-main .blog-category-container .grey-container {
     height: 110px;
 }
+
+.blog-main .blog-login-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.blog-main .blog-login-section>div,
+.blog-main .blog-login-section>form {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 20px;
+}
+
+.blog-main .blog-login-section>div:nth-child(1) {
+    gap: 0px;
+}
+
+.blog-main .blog-login-section>div:nth-child(1)>p {
+    border-bottom: 2px solid var(--textLight);
+    padding: 5px 20px;
+    border-radius: 0px;
+    /* padding: 5px 0; */
+
+}
+
+.blog-main .blog-login-section>div:nth-child(1)>p:nth-child(1) {
+    border-bottom: 2px solid var(--primary);
+    padding: 5px 0;
+    /* border: 1px solid red; */
+    border-radius: 0px;
+}
+
+.blog-main .blog-login-section>div p {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 0px 10px;
+    border-radius: 5px;
+}
+
+.blog-main .blog-login-section>div p .MuiSvgIcon-root {
+    font-size: 18px;
+}
+
+
+.blog-main .blog-login-section>div input {
+    width: 100%;
+    padding: 10px 5px;
+    /* border: none; */
+    border: 1px solid var(--textLight);
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.blog-main .blog-login-section .login-icons {
+    color: var(--light);
+    gap: 10px;
+    width: 90%;
+    margin-left: auto;
+
+}
+
+.blog-main .blog-login-section .login-icons .MuiSvgIcon-root {
+    border-radius: 50%;
+    font-size: 30px;
+    padding: 5px;
+}

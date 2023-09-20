@@ -10,6 +10,17 @@
     width: 130px;
 }
 
+.ant-dropdown-menu {
+    border-radius: 0px !important;
+}
+
+.ant-dropdown-menu li {
+    width: 85px;
+}
+
+.ant-dropdown-menu li:hover {
+    color: var(--primary) !important;
+}
 
 .navbar>ul {
     gap: 30px;
@@ -133,7 +144,7 @@
 
 .section1 {
     padding-bottom: 20px;
-    z-index: -2;
+    z-index: 0;
 }
 
 .subheading {
@@ -174,26 +185,28 @@
 
 }
 
-.cause-card .progress-container>div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .cause-card button {
     /* margin-top: 100%; */
     padding: 5px 24px;
     width: fit-content;
 }
 
-.cause-card .progressbar {
+
+.progress-container>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.progressbar {
     margin: 5px 0;
     width: 100%;
     height: 8px;
     background: #C7E7DF;
 }
 
-.cause-card .progressbar>div {
+.progressbar>div {
     background-color: var(--primary);
     height: 8px;
 }
@@ -398,5 +411,69 @@
 
 .feature-card .image-container>img {
     width: 100%;
+}
+
+.donate-now-modal>div {
+    /* width: 50%; */
+    display: flex;
+    flex-direction: column;
+    padding: 50px 30px;
+    gap: 40px;
+    font-size: 18px;
+    /* background-color: white; */
+
+}
+
+.donate-now-modal h6 {
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.donate-now-modal label {
+    cursor: pointer;
+}
+
+/* 
+.donate-now-modal label,
+.donate-now-modal input {
+    display: block;
+} */
+
+
+.donate-now-modal input[type="text"],
+.donate-now-modal input[type="email"],
+.donate-now-modal textarea {
+    resize: none;
+    border: 1px solid #D9D7D7;
+    background-color: var(--light);
+    height: 50px;
+    width: 100%;
+    padding: 0px 10px;
+    font-size: 16px;
+}
+
+.donate-now-modal input[type="checkbox"],
+.donate-now-modal input[type="radio"] {
+    height: auto;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    border-color: red;
+}
+
+.donate-now-modal textarea {
+    height: 150px;
+    padding: 10px 10px;
+}
+
+.donate-now-modal .personal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flex {
+    display: flex;
 
 }

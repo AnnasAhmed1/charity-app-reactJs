@@ -7,15 +7,19 @@ const ButtonComp = ({
   full = false,
   color = "light",
   thin = false,
+  onClick = () => {},
+  hover = true,
   style = {},
 }) => {
   return (
     <button
+      onClick={onClick}
       className={`helper-p3 ${
         thin ? "helper-button-thin" : "helper-button"
       } flex`}
       style={{
         backgroundColor: `var(--${bgColor})`,
+        cursor: "pointer",
         width: full ? "100%" : null,
         color: `var(--${color})`,
         ...style,

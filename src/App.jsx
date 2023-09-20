@@ -8,6 +8,9 @@ import NotFound from "./pages/notFound";
 import SerachNotFound from "./pages/serachNotFound";
 import Causes from "./pages/causes";
 import Blog from "./pages/blog";
+import Donate from "./pages/donate";
+import DonateModal from "./components/donateModal";
+import Faq from "./pages/faq";
 
 function App() {
   return (
@@ -15,8 +18,11 @@ function App() {
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="blog" element={<Blog />} />
+      <Route path="donate" element={<Donate />} />
+      <Route path="donate-modal" element={<DonateModal />} />
       <Route path="contact" element={<Contact />} />
       <Route path="causes" element={<Causes />} />
+      <Route path="faq" element={<Faq />} />
       <Route path="not-found" element={<SerachNotFound />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

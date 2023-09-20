@@ -3,7 +3,7 @@ import Navbar from "./navbar";
 import { H5 } from "../helper/heading";
 import { P1 } from "../helper/paragraph";
 
-const PageHead = ({ page = "" }) => {
+const PageHead = ({ page = "", subNav }) => {
   return (
     <section className="bgGray relative section1">
       <div className="trapezium absolute"></div>
@@ -15,8 +15,23 @@ const PageHead = ({ page = "" }) => {
       />
       <Navbar />
       <div className="main-section container">
-        <H5 text={page} center color="light" />
-        <P1 text={`Home / ${page}`} nunito center color="light" underline />
+        <H5
+          text={page}
+          center
+          color="light"
+          style={{
+            width: "60%",
+            margin: "0 auto",
+          }}
+        />
+        <P1
+          text={`Home / ${subNav ? subNav : page}`}
+          nunito
+          center
+          color="light"
+          underline
+          fontWeight="500"
+        />
       </div>
     </section>
   );
