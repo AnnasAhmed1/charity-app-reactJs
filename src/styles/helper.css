@@ -22,6 +22,7 @@
     font-size: 48px;
     line-height: 60px;
 }
+
 .helper-h6 {
     font-size: 25px;
     line-height: 33px;
@@ -49,6 +50,35 @@
 
 .helper-button {
     padding: 12px 24px;
+    transition: all 0.5s ease;
+    border: 1px solid transparent;
+    border: 1px solid var(--primary);
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.primary-button {
+    border: 1px solid var(--primary);
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.primary-button:hover {
+    border: 1px solid var(--primary);
+    background-color: var(--light);
+    color: var(--primary);
+}
+
+.white-button {
+    border: 1px solid var(--light);
+    background-color: var(--light);
+    color: var(--primary);
+}
+
+.white-button:hover {
+    border: 1px solid var(--light);
+    background-color: var(--primary);
+    color: var(--light);
 }
 
 .helper-button-thin {

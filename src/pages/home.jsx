@@ -165,6 +165,7 @@ const Home = () => {
                   text="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
                   color="light"
                 />
+                <br />
                 <ButtonComp text="Call Us" />
               </div>
             </div>
@@ -217,7 +218,6 @@ const Home = () => {
               })}
             </div>
           </section>
-          
         </div>
       </main>
       <FooterComp />

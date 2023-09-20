@@ -3,20 +3,24 @@ import "../styles/helper.css";
 
 const ButtonComp = ({
   text = "",
-  bgColor = "primary",
+  bgColor = "",
   full = false,
-  color = "light",
+  color = "",
   thin = false,
   onClick = () => {},
+  white = false,
   hover = true,
   style = {},
 }) => {
   return (
     <button
       onClick={onClick}
-      className={`helper-p3 ${
-        thin ? "helper-button-thin" : "helper-button"
-      } flex`}
+      className={`helper-p3 helper-button  ${
+        thin ? "helper-button-thin" : null
+      } 
+      ${hover ? (white ? "white-button" : "primary-button") : null}
+      
+      flex`}
       style={{
         backgroundColor: `var(--${bgColor})`,
         cursor: "pointer",

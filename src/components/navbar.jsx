@@ -72,10 +72,10 @@ const Navbar = ({ home = false, light = false }) => {
           En
           <KeyboardArrowDownIcon />
         </p>
-        {home ? (
-          <ButtonComp text="Contact us" bgColor="light" color="dark" />
-        ) : null}
-        <ButtonComp text="Donate Now" />
+        {home ? <ButtonComp text="Contact us" white /> : null}
+        <Link to={"/donate"}>
+          <ButtonComp text="Donate Now" />
+        </Link>
         <button
           style={{
             cursor: "pointer",

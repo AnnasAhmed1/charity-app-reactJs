@@ -53,7 +53,7 @@ const DonateModal = ({ open, setOpen }) => {
             className="flex"
           >
             <label htmlFor="amount">
-              <ButtonComp text="$" />
+              <ButtonComp text="$" hover={false} />
             </label>
             <input type="text" name="amount" id="amount" />
             <ButtonComp
@@ -61,6 +61,55 @@ const DonateModal = ({ open, setOpen }) => {
               style={{
                 wordBreak: "keep-all",
                 marginLeft: "20px",
+              }}
+            />
+          </div>
+          <div
+            style={{
+              width: "75%",
+              display: "flex",
+              gap: "15px",
+              marginTop: "20px",
+            }}
+          >
+            <ButtonComp
+              text="$10:00"
+              white
+              thin
+              style={{
+                borderColor: "var(--primary)",
+              }}
+            />
+            <ButtonComp
+              text="$25:00"
+              white
+              thin
+              style={{
+                borderColor: "var(--primary)",
+              }}
+            />
+            <ButtonComp
+              text="$50:00"
+              white
+              thin
+              style={{
+                borderColor: "var(--primary)",
+              }}
+            />
+            <ButtonComp
+              text="$100:00"
+              white
+              thin
+              style={{
+                borderColor: "var(--primary)",
+              }}
+            />
+            <ButtonComp
+              text="$250:00"
+              white
+              thin
+              style={{
+                borderColor: "var(--primary)",
               }}
             />
           </div>
@@ -121,14 +170,13 @@ const DonateModal = ({ open, setOpen }) => {
                 color: "var(--textPrimary)",
               }}
             />
-            <ButtonComp text="$10.00" />
+            <ButtonComp text="$10.00" hover={false} />
           </div>
         </div>
         <ButtonComp
           text="Donate now"
           full
-          bgColor="light"
-          color="primary"
+          white
           style={{
             border: "1px solid var(--primary)",
           }}

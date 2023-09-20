@@ -70,7 +70,7 @@ const FooterComp = () => {
             <H4 color="light" text="Newsletter" />
             <div>
               <input type="email" placeholder="Enter Your Email" />
-              <ButtonComp text="Subscribe" thin />
+              <ButtonComp text="Subscribe" thin hover={false} />
             </div>
             <P3
               color="textLight"
