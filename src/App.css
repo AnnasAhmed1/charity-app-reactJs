@@ -6,10 +6,8 @@
 }
 
 *:focus {
-    outline: none;
+    outline-color: var(--primary);
 }
-
-
 
 :root {
     --primary: #C32C3E;

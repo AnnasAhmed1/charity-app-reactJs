@@ -150,10 +150,12 @@ const Navbar = ({ home = false, light = false }) => {
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem> */}
       </Menu>
-      <img
-        src={require(`../assets/${light ? "logo_black" : "logo"}.png`)}
-        alt=""
-      />
+      <Link to={"/"}>
+        <img
+          src={require(`../assets/${light ? "logo_black" : "logo"}.png`)}
+          alt=""
+        />
+      </Link>
       <ul className="flex hide-tablet">
         <Link to={"/"} className="helper-p3">
           Home

@@ -11,6 +11,7 @@ import Blog from "./pages/blog";
 import Donate from "./pages/donate";
 import DonateModal from "./components/donateModal";
 import Faq from "./pages/faq";
+import Element from "./pages/element";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="causes" element={<Causes />} />
       <Route path="faq" element={<Faq />} />
       <Route path="not-found" element={<SerachNotFound />} />
+      <Route path="element" element={<Element />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

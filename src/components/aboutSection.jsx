@@ -4,6 +4,7 @@ import { H2 } from "../helper/heading";
 import { P3 } from "../helper/paragraph";
 import "../styles/component.css";
 import ButtonComp from "../helper/button";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
@@ -23,7 +24,9 @@ const AboutSection = () => {
       underestimate the difference YOU can make in the
       lives of the poor, the abused and the helpless."
         />
-        <ButtonComp text="Read More" />
+        <Link to="/about">
+          <ButtonComp text="Read More" />
+        </Link>
       </div>
     </section>
   );

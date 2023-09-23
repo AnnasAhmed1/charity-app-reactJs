@@ -1,5 +1,5 @@
-import React from "react";
-import { H3, H4 } from "../helper/heading";
+import React, { useState } from "react";
+import { H2, H3, H4 } from "../helper/heading";
 import { P3 } from "../helper/paragraph";
 import ButtonComp from "../helper/button";
 
@@ -9,8 +9,17 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { Link } from "react-router-dom";
+import DoneIcon from "@mui/icons-material/Done";
+import { Modal } from "antd";
 
 const FooterComp = () => {
+  const [isFooterModalOpen, setIsFooterModalOpen] = useState(false);
+  const showModal = () => {
+    setIsFooterModalOpen(true);
+  };
+  const handleCancel = () => {
+    setIsFooterModalOpen(false);
+  };
   return (
     <>
       <section
@@ -19,6 +28,46 @@ const FooterComp = () => {
         }}
         className="main-section "
       >
+        <Modal
+          centered
+          open={isFooterModalOpen}
+          onCancel={handleCancel}
+          footer={false}
+          className="modal"
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "20px 0px",
+              gap: "20px",
+            }}
+          >
+            <H2 text="THANKS FOR SUBSCRIBING" center />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "var(--primary)",
+                borderRadius: "50%",
+                // width:"80px",
+                // height:"80px",
+                padding: "10px",
+              }}
+            >
+              <DoneIcon
+                className="helper-h5"
+                style={{
+                  lineHeight: "0px",
+                  color: "#ffffff",
+                }}
+              />
+            </div>
+          </div>
+        </Modal>
         <div className="logo-container container">
           <div>
             <img src={require("../assets/logotype.png")} alt="" />
@@ -37,11 +86,13 @@ const FooterComp = () => {
       <footer className="footer">
         <div className="container/ main-section flex-responsive">
           <div>
-            <img
-              className="logo"
-              src={require("../assets/logo_footer.png")}
-              alt=""
-            />
+            <Link to={"/"}>
+              <img
+                className="logo"
+                src={require("../assets/logo_footer.png")}
+                alt=""
+              />
+            </Link>
             <p className="rating">10k</p>
             <H3 color="light" text="Worldwide Client" />
             <H3 color="light" text="Already Connected" />
@@ -58,16 +109,16 @@ const FooterComp = () => {
               <Link to="/blog">
                 <P3 color="textLight" text="Blog post" />
               </Link>
-              <P3 color="textLight" text="Photo gallery" />
+              {/* <P3 color="textLight" text="Photo gallery" /> */}
             </div>
             <div>
               <H4 color="light" text="Get In Touch" />
               <Link to={"/contact"}>
                 <P3 color="textLight" text="Contact us" />
               </Link>
-              <Link>
+              {/* <Link>
                 <P3 color="textLight" text="Our services" />
-              </Link>
+              </Link> */}
             </div>
             <div>
               <H4 color="light" text="Address" />
@@ -79,20 +130,33 @@ const FooterComp = () => {
           </div>
           <div className="footer-newsletter">
             <H4 color="light" text="Newsletter" />
-            <div>
-              <input type="email" placeholder="Enter Your Email" />
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                showModal();
+              }}
+            >
+              <input type="email" placeholder="Enter Your Email" required />
               <ButtonComp text="Subscribe" thin hover={false} />
-            </div>
+            </form>
             <P3
               color="textLight"
               text="Your email is safe with us,we don't spam."
             />
             <H4 color="light" text="Follow Me" />
             <div className="contact-icons">
-              <TwitterIcon />
-              <InstagramIcon />
-              <PinterestIcon />
-              <YouTubeIcon />
+              <Link to={"https://twitter.com/"} target="_blank">
+                <TwitterIcon />
+              </Link>
+              <Link to={"https://www.instagram.com/"} target="_blank">
+                <InstagramIcon />
+              </Link>
+              <Link to={"https://www.pinterest.com/"} target="_blank">
+                <PinterestIcon />
+              </Link>
+              <Link to={"https://youtube.com/"} target="_blank">
+                <YouTubeIcon />
+              </Link>
             </div>
           </div>
         </div>

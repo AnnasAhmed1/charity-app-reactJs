@@ -1,0 +1,79 @@
+.element-main section {
+    padding-bottom: 0px;
+}
+
+.element-main li {
+    list-style: auto;
+    list-style-position: inside;
+    padding: 5px 0px;
+}
+
+.element-main h2:nth-child(1) {
+    margin-bottom: 40px;
+}
+
+.heading-32px {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 42px;
+}
+
+.element-main ul>li {
+    list-style-type: disc;
+}
+
+.element-main table {
+    width: 100%;
+    text-align: center;
+    border: none;
+    border-collapse: collapse;
+}
+
+.element-main table th {
+    background-color: var(--primary);
+    color: var(--light);
+    border-right: 1px solid var(--light);
+    font-weight: 500;
+
+}
+
+.element-main table tr {
+    height: 45px;
+    background-color: #252A3414;
+    font-family: 'Nunito', serif;
+}
+
+.element-main table tr td {
+    font-weight: 300 !important;
+
+
+}
+
+.element-main .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #252A3433;
+    width: 100%;
+    height: 400px;
+}
+
+.element-main .video-container div {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    font-size: 25px;
+}
+
+.element-main .video-container div .MuiSvgIcon-root {
+    font-size: 40px;
+}
+
+.element-main .video-container>div,
+.element-main .video-container>div>div {
+    background-color: #ffffff80;
+}

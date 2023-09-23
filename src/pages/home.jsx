@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/pages/home.css";
 import "../styles/global.css";
 import Navbar from "../components/navbar";
@@ -15,6 +15,9 @@ import AboutSection from "../components/aboutSection";
 import Funfacts from "../components/funfacts";
 import TestimonialsSection from "../components/testimonialsSection";
 import { scrollToSection } from "../config/function";
+import { Modal } from "antd";
+import { HeartOutlined } from "@ant-design/icons";
+import { CheckOutlined } from "@mui/icons-material";
 
 // 861
 // 1059
@@ -69,8 +72,39 @@ const Home = () => {
       heading: "Why You Should Focus on Charity",
     },
   ];
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+  const [isSectionVisible, setIsSectionVisible] = useState(false);
+
+  // Function to handle the scroll event
+  const handleScroll = () => {
+    const section = document.getElementById("your-section-id"); // Replace with your section's actual ID
+    if (section) {
+      const { top, bottom } = section.getBoundingClientRect();
+      const windowHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+
+      // Check if the section is within the viewport
+      if (top >= 0 && bottom <= windowHeight) {
+        setIsSectionVisible(true);
+      } else {
+        setIsSectionVisible(false);
+      }
+    }
+  };
   useEffect(() => {
     scrollToSection();
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
   return (
     <>
@@ -88,6 +122,46 @@ const Home = () => {
             alt=""
           />
           <Navbar home={true} />
+          <Modal
+            centered
+            open={isModalOpen}
+            onCancel={handleCancel}
+            footer={false}
+            className="modal"
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: "20px 0px",
+                gap: "20px",
+              }}
+            >
+              <H2 text="THANKS FOR DONATE" center />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "var(--primary)",
+                  borderRadius: "50%",
+                  // width:"80px",
+                  // height:"80px",
+                  padding: "10px",
+                }}
+              >
+                <HeartOutlined
+                  className="helper-h5"
+                  style={{
+                    lineHeight: "0px",
+                    color: "#ffffff",
+                  }}
+                />
+              </div>
+            </div>
+          </Modal>
           <div className="container ">
             <div className="home-head">
               <P1 text="Give Hope For Homeless" center color="light" />
@@ -106,19 +180,24 @@ const Home = () => {
               <P2 text="" center color="light" fontWeight="400" />
             </div>
             <div className="home-details flex-responsive">
-              <form>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  showModal();
+                }}
+              >
                 <div>
                   <div>
                     <label htmlFor="name">Full Name</label>
-                    <input type="text" id="name" />
+                    <input required type="text" id="name" />
                   </div>
                   <div>
                     <label htmlFor="email">Email</label>
-                    <input type="text" id="email" />
+                    <input required type="email" id="email" />
                   </div>
                   <div>
                     <label htmlFor="cause">Select Cause</label>
-                    <select name="cause" id="cause">
+                    <select required name="cause" id="cause">
                       <option>Educations</option>
                       <option>Educations</option>
                       <option>Educations</option>
@@ -126,7 +205,7 @@ const Home = () => {
                   </div>
                   <div>
                     <label htmlFor="amount">Amount</label>
-                    <select name="amount" id="amount">
+                    <select required name="amount" id="amount">
                       <option>$ 5</option>
                       <option>$ 5</option>
                       <option>$ 5</option>
@@ -141,6 +220,7 @@ const Home = () => {
                         id="html"
                         name="fav_language"
                         value="HTML"
+                        required
                       />
                       <label htmlFor="html">One Time</label>
                       <input
@@ -148,6 +228,7 @@ const Home = () => {
                         id="css"
                         name="fav_language"
                         value="CSS"
+                        required
                       />
                       <label htmlFor="css">Monthly</label>
                       <input
@@ -155,6 +236,7 @@ const Home = () => {
                         id="javascript"
                         name="fav_language"
                         value="JavaScript"
+                        required
                       />
                       <label htmlFor="javascript">Annualy</label>
                     </div>
@@ -205,6 +287,7 @@ const Home = () => {
             <H2 text="More Lifes with you" />
             <Funfacts />
           </section>
+          <button class="spin circle">Spin Circle</button>
           <section className="main-section articles-section">
             <SubHeading text="Latest News" />
             <H2 text="Articel You May Read" />

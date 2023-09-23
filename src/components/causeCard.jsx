@@ -2,6 +2,7 @@ import React from "react";
 import { P3, P4 } from "../helper/paragraph";
 import { H3 } from "../helper/heading";
 import ButtonComp from "../helper/button";
+import { Link } from "react-router-dom";
 
 const CauseCard = ({
   subHeading = "",
@@ -39,7 +40,11 @@ const CauseCard = ({
             <P4 text={`Goal: ${goal}`} />
           </div>
         </div>
-        {imageButton ? <ButtonComp text="Donate Now" /> : null}
+        {imageButton ? (
+          <Link to="/donate">
+            <ButtonComp text="Donate Now" />
+          </Link>
+        ) : null}
       </div>
     </div>
   );

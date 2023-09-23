@@ -6,7 +6,7 @@
     color: #ffffff;
 }
 
-.navbar>img {
+.navbar>a>img {
     width: 130px;
 }
 
@@ -32,7 +32,7 @@
         padding: 25px 5%;
     }
 
-    .navbar>img {
+    .navbar>a>img {
         width: 110px;
     }
 
@@ -79,7 +79,7 @@
         font-size: 18px;
     }
 
-    .navbar>img {
+    .navbar>a>img {
         width: 85px;
     }
 
@@ -191,12 +191,13 @@
     flex: 1;
 }
 
-.footer .footer-newsletter>div {
+.footer .footer-newsletter>div,
+.footer .footer-newsletter>form {
     display: flex;
     width: 100%;
 }
 
-.footer .footer-newsletter>div>input {
+.footer .footer-newsletter>form>input {
     width: 100%;
     border: none;
     padding: 10px;
@@ -376,8 +377,130 @@
     font-family: "Nunito";
 }
 
-.fact-card>img {
+.fact-card>.image {
     width: 120px;
+    height: 120px;
+    border: 5px solid var(--primary);
+    /* padding: 20px; */
+    background-color: var(--light);
+    border-radius: 50%;
+}
+
+.fact-card>.image>div {
+    width: 110px;
+    height: 110px;
+    padding: 20px;
+    background-color: var(--light);
+    border-radius: 50%;
+}
+
+/* RoundedContainer.css */
+
+.rounded-container {
+    width: 200px;
+    /* Set the width and height as per your design */
+    height: 200px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.rounded-container::before,
+.rounded-container::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid transparent;
+    /* Set border thickness */
+    border-radius: 50%;
+}
+
+.rounded-container::before {
+    border-image: linear-gradient(to right, #ff0000, #00ff00);
+    /* Define your gradient colors */
+    border-image-slice: 1;
+    animation: border-animation 2s linear infinite;
+    /* Adjust animation duration as needed */
+}
+
+.rounded-container::after {
+    border-image: linear-gradient(to left, #ff0000, #00ff00);
+    /* Define your gradient colors */
+    border-image-slice: 1;
+    animation: border-animation 2s linear infinite;
+    /* Adjust animation duration as needed */
+}
+
+@keyframes border-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.rounded-container {
+    width: 200px;
+    /* Set the width and height as per your design */
+    height: 200px;
+    border: 5px solid transparent;
+    /* Set border thickness */
+    background: linear-gradient(to right, #ff0000, #00ff00);
+    /* Define your gradient colors */
+    /* background-origin: border-box; */
+    /* background-clip: content-box, border-box; */
+
+
+}
+
+.rounded-container>div {
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    background-color: var(--light);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.rounded-container::before {
+    /* content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 5px solid #00f;
+    border-radius: 50%;
+    animation: border-animation 2s linear infinite; */
+    /* Adjust animation duration as needed */
+}
+
+@keyframes border-animation {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+.fact-card>.image img {
+    width: 100%;
 }
 
 .article-card {
