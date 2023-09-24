@@ -705,7 +705,20 @@
 
 }
 
-.testimonial-conatainer>div {
+.slick-prev:before,
+.slick-next:before {
+    font-size: 50px !important;
+}
+
+.testimonial-conatainer .slick-prev:before {
+    content: "";
+}
+
+.testimonial-conatainer .slick-next:before {
+    content: "";
+}
+
+.testimonial-conatainer .testimonial-card {
     display: flex;
     flex-direction: column;
     justify-content: center;

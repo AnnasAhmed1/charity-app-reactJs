@@ -12,6 +12,8 @@ import Donate from "./pages/donate";
 import DonateModal from "./components/donateModal";
 import Faq from "./pages/faq";
 import Element from "./pages/element";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (

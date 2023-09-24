@@ -336,12 +336,6 @@ const Navbar = ({ home = false, light = false }) => {
         })}
       </ul>
       <div className="flex">
-        {/* <DownOutlined /> */}
-        {/* <div className={`helper-p3 hide-mobile flex`}> */}
-        {/* <label for="country">
-          En
-          <KeyboardArrowDownIcon />
-        </label> */}
         <Select
           defaultValue="En"
           color="white"
@@ -371,13 +365,10 @@ const Navbar = ({ home = false, light = false }) => {
           ]}
         />
 
-        {/* </div> */}
-        {/* <p className="flex helper-p3 hide-mobile">
-          En
-          <KeyboardArrowDownIcon />
-        </p> */}
         {home ? (
-          <ButtonComp text="Contact us" white className="hide-mobile" />
+          <Link to={"/contact"}>
+            <ButtonComp text="Contact us" white className="hide-mobile" />
+          </Link>
         ) : null}
         <Link to={"/donate"}>
           <ButtonComp text="Donate Now" />

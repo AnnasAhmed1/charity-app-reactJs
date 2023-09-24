@@ -287,7 +287,7 @@ const Home = () => {
             <H2 text="More Lifes with you" />
             <Funfacts />
           </section>
-          <button class="spin circle">Spin Circle</button>
+          {/* <button class="spin circle">Spin Circle</button> */}
           <section className="main-section articles-section">
             <SubHeading text="Latest News" />
             <H2 text="Articel You May Read" />
