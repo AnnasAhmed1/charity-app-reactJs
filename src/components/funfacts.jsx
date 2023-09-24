@@ -4,22 +4,22 @@ import FactsCard from "./factsCard";
 const Funfacts = ({ bgColor }) => {
   const factsData = [
     {
-      image: "people_rised",
+      image: "people_rised1",
       number: "4597+",
       bottomText: "People rised",
     },
     {
-      image: "volunteer",
+      image: "volunteer1",
       number: "8945+",
       bottomText: "Volunteer",
     },
     {
-      image: "poor_saved",
+      image: "poor_saved1",
       number: "10M+",
       bottomText: "Poor People Saved",
     },
     {
-      image: "country_member",
+      image: "country_member1",
       number: "100+",
       bottomText: "Country Member",
     },
