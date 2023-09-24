@@ -10,12 +10,32 @@
     width: 130px;
 }
 
+.navbar .nav-active {
+    /* text-decoration: underline !important; */
+    border-bottom: 1px solid white;
+}
+
+.navbar ul>a {
+    /* padding-bottom: 2px; */
+}
+
 .ant-dropdown-menu {
     border-radius: 0px !important;
 }
 
+.navbar .ant-select-selection-item,
+.navbar .ant-select-arrow {
+    color: white;
+}
+
 .ant-dropdown-menu li {
-    width: 85px;
+    color: rgba(37, 42, 52, 0.7) !important;
+}
+
+.ant-dropdown-menu .nav-active {
+    text-decoration: underline;
+    color: var(--primary) !important;
+
 }
 
 .ant-dropdown-menu li:hover {

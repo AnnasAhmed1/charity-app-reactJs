@@ -1,31 +1,97 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ButtonComp from "../helper/button";
 import "../styles/component.css";
 import "../styles/global.css";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 // import { DownOutlined, SmileOutlined } from "@ant-design/icons";
-import { Drawer, Dropdown, Space } from "antd";
+import { Drawer, Dropdown, Select, Space } from "antd";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = ({ home = false, light = false }) => {
+  const location = useLocation();
   const pages = [
     {
       key: "1",
-      label: <Link to="/causes">Causes</Link>,
+      label: (
+        <Link
+          to="/causes"
+          className={`helper-p3 ${
+            location.pathname === "/causes" ? "nav-active" : null
+          }`}
+        >
+          Causes
+        </Link>
+      ),
     },
     {
       key: "2",
-      label: <Link to="/contact">Contact</Link>,
+      label: (
+        <Link
+          to="/contact"
+          className={`helper-p3 ${
+            location.pathname === "/contact" ? "nav-active" : null
+          }`}
+        >
+          Contact
+        </Link>
+      ),
     },
     {
       key: "3",
-      label: <Link to="/faq">FAQ</Link>,
+      label: (
+        <Link
+          to="/faq"
+          className={`helper-p3 ${
+            location.pathname === "/faq" ? "nav-active" : null
+          }`}
+        >
+          FAQ
+        </Link>
+      ),
     },
+    {
+      key: "4",
+      label: (
+        <Link
+          to="/404"
+          style={{
+            // width: "500px",
+            borderBottom:
+              location.pathname === "/404"
+                ? "1px solid var(--textPrimary)"
+                : null,
+          }}
+          className={`helper-p3 ${
+            location.pathname === "/404" ? "nav-active" : null
+          }`}
+        >
+          404 error
+        </Link>
+      ),
+    },
+    {
+      key: "5",
+      label: (
+        <Link
+          to="/element"
+          className={`helper-p3 ${
+            location.pathname === "/element" ? "nav-active" : null
+          }`}
+        >
+          Elements
+        </Link>
+      ),
+    },
+  ];
+  const languages = [
+    { key: "1", label: "En" },
+    { key: "2", label: "Es" },
+    { key: "3", label: "Fr" },
   ];
   const [open, setOpen] = useState(false);
 
@@ -43,6 +109,40 @@ const Navbar = ({ home = false, light = false }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const [activeNav, setActiveNav] = useState(null);
+  const navs = [
+    {
+      label: "Home",
+      to: "/",
+    },
+    {
+      label: "Causes",
+      to: "/causes",
+    },
+    {
+      label: "About",
+      to: "/about",
+    },
+    {
+      label: "Pages",
+      // to: "",
+    },
+    // {
+    //   label: "Contact",
+    //   to: "/contact",
+    // },
+    // {
+    //   label: "FAQ",
+    //   to: "/faq",
+    // },
+    {
+      label: "Blogs",
+      to: "/blog",
+    },
+  ];
+  // const handleActiveNav = (nav) => {
+  //   setActiveNav(nav);
+  // };
   return (
     <nav className={`navbar ${!light ? "transparent" : null}`}>
       <Drawer
@@ -97,19 +197,32 @@ const Navbar = ({ home = false, light = false }) => {
             width: "120px",
           }}
         >
-          <Link to={"/"} className="helper-p3">
+          <Link
+            to={"/"}
+            className={`helper-p3 ${activeNav == "Home" ? "nav-active" : null}`}
+          >
             Home
           </Link>
         </MenuItem>
         {home ? (
           <>
             <MenuItem onClick={handleClose}>
-              <Link to={"/causes"} className="helper-p3">
+              <Link
+                to={"/causes"}
+                className={`helper-p3 ${
+                  activeNav == "Causes" ? "nav-active" : null
+                }`}
+              >
                 Causes
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link to={"/about"} className="helper-p3">
+              <Link
+                to={"/about"}
+                className={`helper-p3 ${
+                  activeNav == "About" ? "nav-active" : null
+                }`}
+              >
                 About
               </Link>
             </MenuItem>
@@ -117,31 +230,54 @@ const Navbar = ({ home = false, light = false }) => {
         ) : (
           <>
             <MenuItem onClick={handleClose}>
-              <Link to={"/about"} className="helper-p3">
+              <Link
+                to={"/about"}
+                className={`helper-p3 ${
+                  activeNav == "About" ? "nav-active" : null
+                }`}
+              >
                 About
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link to={"/causes"} className="helper-p3">
+              <Link
+                to={"/causes"}
+                className={`helper-p3 ${
+                  activeNav == "Causes" ? "nav-active" : null
+                }`}
+              >
                 Causes
               </Link>
             </MenuItem>
           </>
         )}
         <MenuItem onClick={handleClose}>
-          <Link to={"/contact"} className="helper-p3">
+          <Link
+            to={"/contact"}
+            className={`helper-p3 ${
+              activeNav == "Contact" ? "nav-active" : null
+            }`}
+          >
             Contact
           </Link>
           {/* <KeyboardArrowDownIcon /> */}
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Link to={"/faq"} className="helper-p3">
+          <Link
+            to={"/faq"}
+            className={`helper-p3 ${activeNav == "FAQ" ? "nav-active" : null}`}
+          >
             FAQ
           </Link>
           {/* <KeyboardArrowDownIcon /> */}
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Link to={"/blog"} className="helper-p3">
+          <Link
+            to={"/blog"}
+            className={`helper-p3 ${
+              activeNav == "Blogs" ? "nav-active" : null
+            }`}
+          >
             Blogs
           </Link>
         </MenuItem>
@@ -157,48 +293,89 @@ const Navbar = ({ home = false, light = false }) => {
         />
       </Link>
       <ul className="flex hide-tablet">
-        <Link to={"/"} className="helper-p3">
-          Home
-        </Link>
-        {home ? (
-          <>
-            <Link to={"/causes"} className="helper-p3">
-              Causes
+        {navs?.map((nav, index) => {
+          return (
+            <Link
+              to={nav.to}
+              className={`helper-p3 ${
+                location.pathname === nav.to ? "nav-active" : null
+              }`}
+              // onClick={() => {
+              //   handleActiveNav(nav.label);
+              // }}
+            >
+              {nav.label !== "Pages" ? (
+                nav.label
+              ) : (
+                <Dropdown
+                  overlayStyle={{
+                    minWidth: "125px",
+                  }}
+                  menu={{
+                    items: pages,
+                  }}
+                  arrow
+                >
+                  {/* <DownOutlined /> */}
+                  <div
+                    className={`helper-p3 flex ${
+                      activeNav == "" ? "nav-active" : null
+                    }`}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    Pages
+                    <KeyboardArrowDownIcon />
+                  </div>
+                </Dropdown>
+              )}
             </Link>
-            <Link to={"/about"} className="helper-p3">
-              About
-            </Link>
-          </>
-        ) : (
-          <>
-            <Link to={"/about"} className="helper-p3">
-              About
-            </Link>
-            <Link to={"/causes"} className="helper-p3">
-              Causes
-            </Link>
-          </>
-        )}
-        <Link className="helper-p3 flex">
-          <Dropdown
-            menu={{
-              items: pages,
-            }}
-          >
-            {/* <DownOutlined /> */}
-            <Space className="helper-p3">Pages</Space>
-          </Dropdown>
-          {/* <KeyboardArrowDownIcon /> */}
-        </Link>
-        <Link to={"/blog"} className="helper-p3">
-          Blogs
-        </Link>
+          );
+        })}
       </ul>
       <div className="flex">
-        <p className="flex helper-p3 hide-mobile">
+        {/* <DownOutlined /> */}
+        {/* <div className={`helper-p3 hide-mobile flex`}> */}
+        {/* <label for="country">
           En
           <KeyboardArrowDownIcon />
-        </p>
+        </label> */}
+        <Select
+          defaultValue="En"
+          color="white"
+          style={{
+            width: 60,
+            backgroundColor: "transparent",
+            color: "white",
+          }}
+          dropdownStyle={{
+            color: "white",
+            width: 80,
+          }}
+          bordered={false}
+          options={[
+            {
+              value: "En",
+              label: "En",
+            },
+            {
+              value: "Es",
+              label: "Es",
+            },
+            {
+              value: "Fr",
+              label: "Fr",
+            },
+          ]}
+        />
+
+        {/* </div> */}
+        {/* <p className="flex helper-p3 hide-mobile">
+          En
+          <KeyboardArrowDownIcon />
+        </p> */}
         {home ? (
           <ButtonComp text="Contact us" white className="hide-mobile" />
         ) : null}
