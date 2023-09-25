@@ -127,14 +127,6 @@ const Navbar = ({ home = false, light = false }) => {
       label: "Pages",
       // to: "",
     },
-    // {
-    //   label: "Contact",
-    //   to: "/contact",
-    // },
-    // {
-    //   label: "FAQ",
-    //   to: "/faq",
-    // },
     {
       label: "Blogs",
       to: "/blog",
@@ -281,6 +273,36 @@ const Navbar = ({ home = false, light = false }) => {
             Blogs
           </Link>
         </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link
+            to={"/donate"}
+            className={`helper-p3 ${
+              activeNav == "Blogs" ? "nav-active" : null
+            }`}
+          >
+            Donate
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link
+            to={"/element"}
+            className={`helper-p3 ${
+              activeNav == "Blogs" ? "nav-active" : null
+            }`}
+          >
+            Elements
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link
+            to={"/*"}
+            className={`helper-p3 ${
+              activeNav == "Blogs" ? "nav-active" : null
+            }`}
+          >
+            404 error
+          </Link>
+        </MenuItem>
         {/* </ul> */}
         {/* <MenuItem onClick={handleClose}>Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
@@ -383,7 +405,7 @@ const Navbar = ({ home = false, light = false }) => {
           <SearchIcon />
         </button>
         <button onClick={handleClick} className="show-tablet">
-          <MenuIcon style={{ color: "#ffffff" }} />
+          <MenuIcon style={{ color: !light ? "#ffffff" : "#000000" }} />
         </button>
       </div>
     </nav>

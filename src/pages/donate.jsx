@@ -16,6 +16,7 @@ import TestimonialsSection from "../components/testimonialsSection";
 import ButtonComp from "../helper/button";
 import DonateModal from "../components/donateModal";
 import { scrollToSection } from "../config/function";
+import { Select } from "antd";
 
 const Donate = () => {
   const [open, setOpen] = useState(false);
@@ -60,12 +61,12 @@ const Donate = () => {
   }, []);
   return (
     <>
-      <main className="blog-main">
+      <main className="blog-main donate-main">
         <PageHead
           page="Donate For Poor Peoples Treatment And Medicine."
           subNav={"Donate"}
         />
-        <DonateModal open={open} setOpen={setOpen} />
+        <DonateModal className="donate-modal" open={open} setOpen={setOpen} />
         <div className="container">
           <section className="main-section ">
             <H2 text="Donating Poor People." />
@@ -253,7 +254,50 @@ const Donate = () => {
                     flex: 1,
                   }}
                 />
-                <P4 text="Login" />
+                <p
+                  className="helper-p4"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    padding: "0px 20px",
+                  }}
+                >
+                  <span
+                    style={{
+                      borderRadius: "50%",
+                      padding: "0 5px",
+                      backgroundColor: "var(--primary)",
+                      color: "var(--light)",
+                      fontSize: "12px",
+                    }}
+                  >
+                    1
+                  </span>
+                  <Select
+                    defaultValue="Login"
+                    color="white"
+                    style={{
+                      width: "fit-content",
+                      backgroundColor: "transparent",
+                      color: "white",
+                    }}
+                    dropdownStyle={{
+                      color: "white",
+                      width: 80,
+                    }}
+                    bordered={false}
+                    options={[
+                      {
+                        value: "Login",
+                        label: "Login",
+                      },
+                      {
+                        value: "Signup",
+                        label: "Signup",
+                      },
+                    ]}
+                  />
+                </p>
               </div>
               <div>
                 <p className="helper-p4">
@@ -285,7 +329,50 @@ const Donate = () => {
                     flex: 1,
                   }}
                 ></p>
-                <P4 text="Sort by Best" />
+                <p
+                  className="helper-p4"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    padding: "0px 20px",
+                  }}
+                >
+                  {/* <span
+                    style={{
+                      borderRadius: "50%",
+                      padding: "0 5px",
+                      backgroundColor: "var(--primary)",
+                      color: "var(--light)",
+                      fontSize: "12px",
+                    }}
+                  >
+                    1
+                  </span> */}
+                  <Select
+                    defaultValue="Sort by Best"
+                    color="white"
+                    style={{
+                      width: "fit-content",
+                      backgroundColor: "transparent",
+                      color: "white",
+                    }}
+                    dropdownStyle={{
+                      color: "white",
+                      width: "fit-content",
+                    }}
+                    bordered={false}
+                    options={[
+                      {
+                        value: "Sort by Best",
+                        label: "Sort by Best",
+                      },
+                      {
+                        value: "Sort by Latest",
+                        label: "Sort by Latest",
+                      },
+                    ]}
+                  />
+                </p>
               </div>
               <div
                 style={{
@@ -317,6 +404,22 @@ const Donate = () => {
                 <P4 text="OR SIGN UP WITH DISQUS?" />
               </div>
               <div className="login-icons">
+                <div
+                  className="image"
+                  style={{
+                    width: "38px",
+                    height: "38px",
+                    marginTop: "5px",
+                  }}
+                >
+                  <img
+                    style={{
+                      width: "100%",
+                    }}
+                    src={require("../assets/disqus_icon.png")}
+                    alt=""
+                  />
+                </div>
                 <TwitterIcon
                   style={{
                     backgroundColor: "#01ACED",

@@ -4,7 +4,7 @@ import TestimonialCard from "./testimonialCard";
 import Slider from "react-slick";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-const TestimonialsSection = ({ text, head = true }) => {
+const TestimonialsSection = ({ text, head = true, slider = true }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -70,10 +70,14 @@ const TestimonialsSection = ({ text, head = true }) => {
     <section className="main-section testimonial-conatainer">
       {/* <TestimonialCard text={text} head={head} /> */}
       <div className="container">
-        <Slider {...settings}>
+        {slider ? (
+          <Slider {...settings}>
+            <TestimonialCard text={text} head={head} />
+            <TestimonialCard text={text} head={head} />
+          </Slider>
+        ) : (
           <TestimonialCard text={text} head={head} />
-          <TestimonialCard text={text} head={head} />
-        </Slider>
+        )}
       </div>
     </section>
   );

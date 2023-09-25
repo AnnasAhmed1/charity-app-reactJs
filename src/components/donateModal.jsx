@@ -11,7 +11,7 @@ const DonateModal = ({ open, setOpen }) => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    bgcolor: "#ffffff",
+    bgcolor: "#F1F1F1",
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
