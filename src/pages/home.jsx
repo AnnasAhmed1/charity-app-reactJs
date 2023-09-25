@@ -19,6 +19,7 @@ import { Modal } from "antd";
 import { HeartOutlined } from "@ant-design/icons";
 import { CheckOutlined } from "@mui/icons-material";
 import ArticlesSlider from "../components/articlesSlider";
+import { Link } from "react-router-dom";
 
 // 861
 // 1059
@@ -53,24 +54,6 @@ const Home = () => {
       percentage: "75%",
       goal: "$2,000",
       raised: "$1,500",
-    },
-  ];
-
-  const articlesData = [
-    {
-      name: "Esther Howard",
-      date: "12 sep 2021",
-      heading: "Charity, Expectations vs. Reality",
-    },
-    {
-      name: "Jacob Jones",
-      date: "22 Aug 2021 ",
-      heading: "This Week's Top Stories About Charity",
-    },
-    {
-      name: "Floyd Miles",
-      date: "30 Jul 2021",
-      heading: "Why You Should Focus on Charity",
     },
   ];
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -252,7 +235,9 @@ const Home = () => {
                   color="light"
                 />
                 <br />
-                <ButtonComp text="Call Us" />
+                <Link to="tel:+923326556262">
+                  <ButtonComp text="Call Us" />
+                </Link>
               </div>
             </div>
           </div>
@@ -262,6 +247,7 @@ const Home = () => {
             <SubHeading text="Latest Causes" />
             <H2 text="Find The Popular Cause" />
             <H2 text="And Donate Them" />
+            {/* <Link to="tel:+923326556262">click</Link> */}
             <div className="causes">
               {causeData.map((cause, index) => {
                 return (
