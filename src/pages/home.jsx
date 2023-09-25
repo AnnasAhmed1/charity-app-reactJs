@@ -18,6 +18,7 @@ import { scrollToSection } from "../config/function";
 import { Modal } from "antd";
 import { HeartOutlined } from "@ant-design/icons";
 import { CheckOutlined } from "@mui/icons-material";
+import ArticlesSlider from "../components/articlesSlider";
 
 // 861
 // 1059
@@ -291,7 +292,8 @@ const Home = () => {
           <section className="main-section articles-section">
             <SubHeading text="Latest News" />
             <H2 text="Articel You May Read" />
-            <div className="articles-container">
+            <ArticlesSlider />
+            {/* <div className="articles-container">
               {articlesData?.map((article, index) => {
                 return (
                   <ArticlesCard
@@ -302,7 +304,7 @@ const Home = () => {
                   />
                 );
               })}
-            </div>
+            </div> */}
           </section>
         </div>
       </main>

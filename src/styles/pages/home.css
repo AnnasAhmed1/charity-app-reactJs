@@ -172,15 +172,16 @@
 }
 
 .home-main .articles-section .articles-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+    /* width: 90%;
     gap: 15px;
+    margin: 30px 10px; */
     margin: 30px 0;
 }
 
 @media (max-width: 768px) {
 
-    .home-main .articles-section .articles-container,
     .home-main .causes {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -188,7 +189,6 @@
 
 @media (max-width: 576px) {
 
-    .home-main .articles-section .articles-container,
     .home-main .causes {
         grid-template-columns: repeat(1, 1fr);
     }
