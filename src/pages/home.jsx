@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/pages/home.css";
 import "../styles/global.css";
 import Navbar from "../components/navbar";
@@ -81,9 +81,39 @@ const Home = () => {
       }
     }
   };
+  const animatedRef = useRef(null);
   useEffect(() => {
-    scrollToSection();
+    // scrollToSection();
     window.addEventListener("scroll", handleScroll);
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Adjust this threshold as needed
+    };
+
+    const callback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // When the section with ID "animation-section" is in the viewport, start the animation
+          animatedRef.current.style.animationPlayState = "running";
+        } else {
+          // When it's out of the viewport, pause the animation
+          animatedRef.current.style.animationPlayState = "paused";
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+
+    if (animatedRef.current) {
+      observer.observe(animatedRef.current);
+    }
+
+    return () => {
+      if (animatedRef.current) {
+        observer.unobserve(animatedRef.current);
+      }
+    };
 
     // Clean up the event listener when the component unmounts
     return () => {
@@ -235,7 +265,7 @@ const Home = () => {
                   color="light"
                 />
                 <br />
-                <Link to="tel:+923326556262">
+                <Link to="tel:+920000000000">
                   <ButtonComp text="Call Us" />
                 </Link>
               </div>
@@ -247,6 +277,7 @@ const Home = () => {
             <SubHeading text="Latest Causes" />
             <H2 text="Find The Popular Cause" />
             <H2 text="And Donate Them" />
+
             {/* <Link to="tel:+923326556262">click</Link> */}
             <div className="causes">
               {causeData.map((cause, index) => {
@@ -272,25 +303,12 @@ const Home = () => {
             <SubHeading text="Our Fun Facts" />
             <H2 text="We Believe that We can Save" />
             <H2 text="More Lifes with you" />
-            <Funfacts />
+            <Funfacts id="animation-section" animatedRef={animatedRef} />
           </section>
-          {/* <button class="spin circle">Spin Circle</button> */}
           <section className="main-section articles-section">
             <SubHeading text="Latest News" />
             <H2 text="Articel You May Read" />
             <ArticlesSlider />
-            {/* <div className="articles-container">
-              {articlesData?.map((article, index) => {
-                return (
-                  <ArticlesCard
-                    key={index}
-                    name={article.name}
-                    date={article.date}
-                    heading={article.heading}
-                  />
-                );
-              })}
-            </div> */}
           </section>
         </div>
       </main>
