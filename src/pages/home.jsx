@@ -83,38 +83,8 @@ const Home = () => {
   };
   const animatedRef = useRef(null);
   useEffect(() => {
-    // scrollToSection();
+    scrollToSection();
     window.addEventListener("scroll", handleScroll);
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5, // Adjust this threshold as needed
-    };
-
-    const callback = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // When the section with ID "animation-section" is in the viewport, start the animation
-          animatedRef.current.style.animationPlayState = "running";
-        } else {
-          // When it's out of the viewport, pause the animation
-          animatedRef.current.style.animationPlayState = "paused";
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(callback, options);
-
-    if (animatedRef.current) {
-      observer.observe(animatedRef.current);
-    }
-
-    return () => {
-      if (animatedRef.current) {
-        observer.unobserve(animatedRef.current);
-      }
-    };
-
     // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
