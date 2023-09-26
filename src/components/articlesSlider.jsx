@@ -59,6 +59,20 @@ const ArticlesSlider = () => {
     slidesToScroll: 1,
     nextArrow: <SamplePrevArrow />,
     prevArrow: <SampleNextArrow />,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -69,6 +83,8 @@ const ArticlesSlider = () => {
           right: "60px",
           top: "-40px",
           color: "var(--dark)",
+          cursor: "pointer",
+
           backgroundColor: "#D9D9D9",
           borderRadius: "50%",
           padding: "5px",
@@ -81,7 +97,7 @@ const ArticlesSlider = () => {
       >
         <KeyboardArrowLeftIcon
           style={{
-            fontSize: "35px",
+            fontSize: "25px",
           }}
         />
       </button>
@@ -93,9 +109,9 @@ const ArticlesSlider = () => {
       <button
         style={{
           position: "absolute",
-          right: "0px",
+          right: "10px",
           top: "-40px",
-
+          cursor: "pointer",
           color: "var(--dark)",
           backgroundColor: "#D9D9D9",
           borderRadius: "50%",
@@ -109,7 +125,7 @@ const ArticlesSlider = () => {
       >
         <ChevronRightIcon
           style={{
-            fontSize: "35px",
+            fontSize: "25px",
           }}
         />
       </button>
