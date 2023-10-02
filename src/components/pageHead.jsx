@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./navbar";
 import { H5 } from "../helper/heading";
 import { P1 } from "../helper/paragraph";
+import { Link } from "react-router-dom";
 
 const PageHead = ({ page = "", subNav }) => {
   return (
@@ -24,14 +25,35 @@ const PageHead = ({ page = "", subNav }) => {
             margin: "0 auto",
           }}
         />
-        <P1
+        {/* <P1
           text={`Home / ${subNav ? subNav : page}`}
           nunito
           center
           color="light"
           underline
           fontWeight="500"
-        />
+        /> */}
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Link to={"/"}>
+            <P1
+              text={`Home / `}
+              nunito
+              center
+              color="light"
+              underline
+              fontWeight="500"
+            />
+          </Link>
+
+          <P1
+            text={`${subNav ? subNav : page}`}
+            nunito
+            center
+            color="light"
+            underline
+            fontWeight="500"
+          />
+        </div>
       </div>
     </section>
   );
