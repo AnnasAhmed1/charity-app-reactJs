@@ -13,7 +13,7 @@ const SerachNotFound = () => {
         <Navbar light />
         <section className="main-section  search-notFound-section">
           <H5 text="Search Result For ‘Hospital’" />
-          <img src={require("../assets/search.png")} alt="" />
+          <img src={require("../assets/search.png")} alt="search not found" />
           <H1 text="Oops! Search Not Found" />
           <P3 text="Nothing matched your search criteria. Please try again with different keywords." />
           <div className="input-container">

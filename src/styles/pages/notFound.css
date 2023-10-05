@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #252A3414;
+    background-color: var(--textPrimaryWithOpacity);
 }
 
 .notFound-section>img {

@@ -1,6 +1,5 @@
 import React from "react";
 import { H4 } from "../helper/heading";
-import { P4 } from "../helper/paragraph";
 
 const FeatureCard = ({ image, heading, itemsCount = 0, coloured = false }) => {
   let listItem = [
@@ -14,7 +13,9 @@ const FeatureCard = ({ image, heading, itemsCount = 0, coloured = false }) => {
     <div
       className="feature-card"
       style={{
-        backgroundColor: coloured ? "var(--primary)" : "#252A3414",
+        backgroundColor: coloured
+          ? "var(--primary)"
+          : "var(--textPrimaryWithOpacity)",
       }}
     >
       <div className="image-container">
@@ -24,13 +25,13 @@ const FeatureCard = ({ image, heading, itemsCount = 0, coloured = false }) => {
         text={heading}
         fontWeight="700"
         style={{
-          color: coloured ? "#ffffff" : null,
+          color: coloured ? "var(--light)" : null,
           listStylePosition: "inside",
         }}
       />
       <p
         style={{
-          color: coloured ? "#EEEEEE" : "#555555",
+          color: coloured ? "#EEEEEE" : "var(--customDarkGrey)",
         }}
         className="helper-p4"
       >
@@ -42,7 +43,7 @@ const FeatureCard = ({ image, heading, itemsCount = 0, coloured = false }) => {
           return (
             <li
               style={{
-                color: coloured ? "#ffffff" : null,
+                color: coloured ? "var(--light)" : null,
                 listStylePosition: "inside",
                 fontWeight: 400,
               }}

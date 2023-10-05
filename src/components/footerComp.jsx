@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { H2, H3, H4 } from "../helper/heading";
 import { P3 } from "../helper/paragraph";
 import ButtonComp from "../helper/button";
-
 // icons
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -24,7 +23,7 @@ const FooterComp = () => {
     <>
       <section
         style={{
-          backgroundColor: "#ffffff",
+          backgroundColor: "var(--light)",
         }}
         className="main-section "
       >
@@ -62,7 +61,7 @@ const FooterComp = () => {
                 className="helper-h5"
                 style={{
                   lineHeight: "0px",
-                  color: "#ffffff",
+                  color: "var(--light)",
                 }}
               />
             </div>
@@ -70,16 +69,16 @@ const FooterComp = () => {
         </Modal>
         <div className="logo-container container">
           <div>
-            <img src={require("../assets/logotype.png")} alt="" />
+            <img src={require("../assets/logotype.png")} alt="logotype" />
           </div>
           <div>
-            <img src={require("../assets/renew.png")} alt="" />
+            <img src={require("../assets/renew.png")} alt="renew" />
           </div>
           <div>
-            <img src={require("../assets/globe.png")} alt="" />
+            <img src={require("../assets/globe.png")} alt="globe" />
           </div>
           <div>
-            <img src={require("../assets/charity.png")} alt="" />
+            <img src={require("../assets/charity.png")} alt="charity" />
           </div>
         </div>
       </section>
@@ -90,7 +89,7 @@ const FooterComp = () => {
               <img
                 className="logo"
                 src={require("../assets/logo_footer.png")}
-                alt=""
+                alt="logo"
               />
             </Link>
             <p className="rating">10k</p>
@@ -109,16 +108,12 @@ const FooterComp = () => {
               <Link to="/blog">
                 <P3 color="textLight" text="Blog post" />
               </Link>
-              {/* <P3 color="textLight" text="Photo gallery" /> */}
             </div>
             <div>
               <H4 color="light" text="Get In Touch" />
               <Link to={"/contact"}>
                 <P3 color="textLight" text="Contact us" />
               </Link>
-              {/* <Link>
-                <P3 color="textLight" text="Our services" />
-              </Link> */}
             </div>
             <div>
               <H4 color="light" text="Address" />

@@ -16,7 +16,7 @@ const CauseCard = ({
     <div className="cause-card">
       <div className="image-container relative">
         {imageButton ? (
-          <img src={require("../assets/patch.png")} alt="" />
+          <img src={require("../assets/patch.png")} alt="backgorund_patch" />
         ) : null}
       </div>
       <div className="text-container">

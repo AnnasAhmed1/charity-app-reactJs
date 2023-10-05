@@ -47,7 +47,7 @@ const CharitySection = () => {
           <div
             className="white-text-container"
             style={{
-              backgroundColor: "#ffffff",
+              backgroundColor: "var(--light)",
             }}
           >
             <ul>

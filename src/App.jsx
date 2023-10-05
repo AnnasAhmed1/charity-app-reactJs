@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Route, Routes } from "react-router";
 import Home from "./pages/home";
@@ -9,7 +8,6 @@ import SerachNotFound from "./pages/serachNotFound";
 import Causes from "./pages/causes";
 import Blog from "./pages/blog";
 import Donate from "./pages/donate";
-import DonateModal from "./components/donateModal";
 import Faq from "./pages/faq";
 import Element from "./pages/element";
 import "slick-carousel/slick/slick.css";

@@ -1,9 +1,8 @@
 import React from "react";
-
-import TestimonialCard from "./testimonialCard";
-import Slider from "react-slick";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import Slider from "react-slick";
+import TestimonialCard from "./testimonialCard";
 const TestimonialsSection = ({ text, head = true, slider = true }) => {
   const settings = {
     dots: false,
@@ -14,22 +13,23 @@ const TestimonialsSection = ({ text, head = true, slider = true }) => {
     nextArrow: <SamplePrevArrow />,
     prevArrow: <SampleNextArrow />,
   };
+
+  const arrowStyle = {
+    position: "absolute",
+    bottom: "50%",
+    color: "var(--light)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
   function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
+    const { onClick } = props;
     return (
       <button
         style={{
-          position: "absolute",
           left: "-50px",
-          bottom: "50%",
-
-          color: "var(--light)",
-
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          ...arrowStyle,
         }}
-        className="custom-arrow custom-prev-arrow"
         onClick={onClick}
       >
         <KeyboardArrowLeftIcon
@@ -41,21 +41,13 @@ const TestimonialsSection = ({ text, head = true, slider = true }) => {
     );
   }
   function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
+    const { onClick } = props;
     return (
       <button
         style={{
-          position: "absolute",
           right: "-50px",
-          bottom: "50%",
-
-          color: "var(--light)",
-
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          ...arrowStyle,
         }}
-        className="custom-arrow custom-prev-arrow"
         onClick={onClick}
       >
         <ChevronRightIcon
@@ -68,7 +60,6 @@ const TestimonialsSection = ({ text, head = true, slider = true }) => {
   }
   return (
     <section className="main-section testimonial-conatainer">
-      {/* <TestimonialCard text={text} head={head} /> */}
       <div className="container">
         {slider ? (
           <Slider {...settings}>

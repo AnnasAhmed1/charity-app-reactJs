@@ -1,14 +1,15 @@
+import AddIcon from "@mui/icons-material/Add";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import RemoveIcon from "@mui/icons-material/Remove";
 import React, { useState } from "react";
 import FooterComp from "../components/footerComp";
 import PageHead from "../components/pageHead";
-import { H2, H3, H4, H5, H6 } from "../helper/heading";
-import { P1, P3 } from "../helper/paragraph";
 import ButtonComp from "../helper/button";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import { H2, H3, H5, H6 } from "../helper/heading";
+import { P1, P3 } from "../helper/paragraph";
 import "../styles/pages/element.css";
 const Element = () => {
+  const [active, setActive] = useState(null);
   const faqs = [
     {
       question: "Collapse 01",
@@ -26,7 +27,6 @@ const Element = () => {
         "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
     },
   ];
-  const [active, setActive] = useState(null);
   const handleActive = (index) => {
     if (index === active) {
       setActive(null);
@@ -46,7 +46,7 @@ const Element = () => {
                 time. Here is the link to Ghost website. Do you want to link a long text here how
                 it looks in this theme."
               style={{
-                color: "#555555",
+                color: "var(--customDarkGrey)",
               }}
             />
           </section>
@@ -66,7 +66,7 @@ const Element = () => {
 labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
 et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem"
               style={{
-                color: "#555555",
+                color: "var(--customDarkGrey)",
               }}
             />
           </section>
@@ -75,35 +75,35 @@ et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
             <ol>
               <li
                 style={{
-                  color: "#555555",
+                  color: "var(--customDarkGrey)",
                 }}
               >
                 Distant no me. A english nonsense.
               </li>
               <li
                 style={{
-                  color: "#555555",
+                  color: "var(--customDarkGrey)",
                 }}
               >
                 Coloring book distillery fanny pack.
               </li>
               <li
                 style={{
-                  color: "#555555",
+                  color: "var(--customDarkGrey)",
                 }}
               >
                 Poutine drinking vinegar bitters.
               </li>
               <li
                 style={{
-                  color: "#555555",
+                  color: "var(--customDarkGrey)",
                 }}
               >
                 Indulged over english mars on.
               </li>
               <li
                 style={{
-                  color: "#555555",
+                  color: "var(--customDarkGrey)",
                 }}
               >
                 We rewritten to as we our this not for on the he world.
@@ -115,35 +115,35 @@ et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
             <ul>
               <li
                 style={{
-                  color: "#555555",
+                  color: "var(--customDarkGrey)",
                 }}
               >
                 Poutine drinking vinegar bitters.
               </li>
               <li
                 style={{
-                  color: "#555555",
+                  color: "var(--customDarkGrey)",
                 }}
               >
                 Literally cred narwhal bitters wayfarers.
               </li>
               <li
                 style={{
-                  color: "#555555",
+                  color: "var(--customDarkGrey)",
                 }}
               >
                 In see building an the
               </li>
               <li
                 style={{
-                  color: "#555555",
+                  color: "var(--customDarkGrey)",
                 }}
               >
                 Be the hundreds beginnings, explains
               </li>
               <li
                 style={{
-                  color: "#555555",
+                  color: "var(--customDarkGrey)",
                 }}
               >
                 Be sounded gentlemen, your eightypercent

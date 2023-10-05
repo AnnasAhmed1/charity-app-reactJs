@@ -1,31 +1,26 @@
-import React, { useEffect, useRef, useState } from "react";
-import "../styles/pages/home.css";
-import "../styles/global.css";
-import Navbar from "../components/navbar";
-import { P1, P2, P3 } from "../helper/paragraph";
-import { H1, H2, H3 } from "../helper/heading";
-import ButtonComp from "../helper/button";
-import SubHeading from "../components/subHeading";
-import CauseCard from "../components/causeCard";
-import FactsCard from "../components/factsCard";
-import FooterComp from "../components/footerComp";
-import ArticlesCard from "../components/articlesCard";
-import CharitySection from "../components/charitySection";
+import { HeartOutlined } from "@ant-design/icons";
+import { Modal } from "antd";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import AboutSection from "../components/aboutSection";
+import ArticlesSlider from "../components/articlesSlider";
+import CauseCard from "../components/causeCard";
+import CharitySection from "../components/charitySection";
+import FooterComp from "../components/footerComp";
 import Funfacts from "../components/funfacts";
+import Navbar from "../components/navbar";
+import SubHeading from "../components/subHeading";
 import TestimonialsSection from "../components/testimonialsSection";
 import { scrollToSection } from "../config/function";
-import { Modal } from "antd";
-import { HeartOutlined } from "@ant-design/icons";
-import { CheckOutlined } from "@mui/icons-material";
-import ArticlesSlider from "../components/articlesSlider";
-import { Link } from "react-router-dom";
-
-// 861
-// 1059
-// 1920
+import ButtonComp from "../helper/button";
+import { H1, H2 } from "../helper/heading";
+import { P1, P2, P3 } from "../helper/paragraph";
+import "../styles/global.css";
+import "../styles/pages/home.css";
 
 const Home = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const causeData = [
     {
       subHeading: "Medical",
@@ -56,39 +51,15 @@ const Home = () => {
       raised: "$1,500",
     },
   ];
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const showModal = () => {
     setIsModalOpen(true);
   };
   const handleCancel = () => {
     setIsModalOpen(false);
   };
-  const [isSectionVisible, setIsSectionVisible] = useState(false);
-
-  // Function to handle the scroll event
-  const handleScroll = () => {
-    const section = document.getElementById("your-section-id"); // Replace with your section's actual ID
-    if (section) {
-      const { top, bottom } = section.getBoundingClientRect();
-      const windowHeight =
-        window.innerHeight || document.documentElement.clientHeight;
-
-      // Check if the section is within the viewport
-      if (top >= 0 && bottom <= windowHeight) {
-        setIsSectionVisible(true);
-      } else {
-        setIsSectionVisible(false);
-      }
-    }
-  };
-  const animatedRef = useRef(null);
   useEffect(() => {
     scrollToSection();
-    window.addEventListener("scroll", handleScroll);
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
   return (
     <>
@@ -98,12 +69,12 @@ const Home = () => {
           <img
             src={require("../assets/home_lines.png")}
             className="absolute bg-image"
-            alt=""
+            alt="backgorund_lines"
           />
           <img
             src={require("../assets/patch.png")}
             className="absolute bg-image"
-            alt=""
+            alt="backgorund_pathc"
           />
           <Navbar home={true} />
           <Modal
@@ -131,8 +102,6 @@ const Home = () => {
                   alignItems: "center",
                   backgroundColor: "var(--primary)",
                   borderRadius: "50%",
-                  // width:"80px",
-                  // height:"80px",
                   padding: "10px",
                 }}
               >
@@ -140,7 +109,7 @@ const Home = () => {
                   className="helper-h5"
                   style={{
                     lineHeight: "0px",
-                    color: "#ffffff",
+                    color: "var(--light)",
                   }}
                 />
               </div>
@@ -247,8 +216,6 @@ const Home = () => {
             <SubHeading text="Latest Causes" />
             <H2 text="Find The Popular Cause" />
             <H2 text="And Donate Them" />
-
-            {/* <Link to="tel:+923326556262">click</Link> */}
             <div className="causes">
               {causeData.map((cause, index) => {
                 return (
@@ -273,7 +240,7 @@ const Home = () => {
             <SubHeading text="Our Fun Facts" />
             <H2 text="We Believe that We can Save" />
             <H2 text="More Lifes with you" />
-            <Funfacts id="animation-section" animatedRef={animatedRef} />
+            <Funfacts id="animation-section" />
           </section>
           <section className="main-section articles-section">
             <SubHeading text="Latest News" />

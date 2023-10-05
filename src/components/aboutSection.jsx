@@ -12,7 +12,7 @@ const AboutSection = () => {
       <div className="combined-container">
         <div>
           <div>
-            <img src={require("../assets/patch.png")} alt="" />
+            <img src={require("../assets/patch.png")} alt="background_patch" />
           </div>
         </div>
       </div>

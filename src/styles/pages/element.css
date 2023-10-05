@@ -34,19 +34,16 @@
     color: var(--light);
     border-right: 1px solid var(--light);
     font-weight: 500;
-
 }
 
 .element-main table tr {
     height: 45px;
-    background-color: #252A3414;
+    background-color: var(--textPrimaryWithOpacity);
     font-family: 'Nunito', serif;
 }
 
 .element-main table tr td {
     font-weight: 300 !important;
-
-
 }
 
 .element-main .video-container {
@@ -65,7 +62,7 @@
     align-items: center;
     padding: 10px;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: var(--light);
     font-size: 25px;
 }
 

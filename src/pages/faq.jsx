@@ -71,7 +71,7 @@ const Faq = () => {
         <PageHead page="Frequently Asked Questions" subNav="FAQ" />
         <section
           style={{
-            backgroundColor: "#252A3414",
+            backgroundColor: "var(--textPrimaryWithOpacity)",
             marginTop: "60px",
           }}
           className="main-section"
@@ -119,7 +119,7 @@ const Faq = () => {
           <H2 text="Still need help" />
           <p
             style={{
-              color: "#555555",
+              color: "var(--customDarkGrey)",
             }}
             className="helper-p3"
           >
@@ -134,7 +134,10 @@ const Faq = () => {
               return (
                 <div key={i}>
                   <div>
-                    <img src={require(`../assets/${v.icon}.png`)} alt="" />
+                    <img
+                      src={require(`../assets/${v.icon}.png`)}
+                      alt={v.icon}
+                    />
                   </div>
                   <H6 text={v.title} />
                   <P3 text={v.text} center />

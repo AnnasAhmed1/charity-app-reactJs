@@ -1,5 +1,5 @@
 import React from "react";
-import { P1, P2, P3 } from "../helper/paragraph";
+import { P2, P3 } from "../helper/paragraph";
 import { H2, H3 } from "../helper/heading";
 const TestimonialCard = ({ text, head = true }) => {
   return (

@@ -34,7 +34,9 @@ button {
     position: absolute;
 }
 
-
+.flex1 {
+    flex: 1;
+}
 
 .flex {
     display: flex;
@@ -44,6 +46,34 @@ button {
 
 .flex-responsive {
     display: flex;
+}
+
+.flex-reverse {
+    flex-direction: column-reverse;
+}
+
+.flex-between {
+    display: flex;
+}
+
+.flex-between>p {
+    width: fit-content;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: #999999
+}
+
+.section1 {
+    padding-bottom: 20px;
+    z-index: 0;
+}
+
+.grey-container {
+    height: 250px;
+    width: 100%;
+    background-color: var(--bgGrey);
 }
 
 .bgGray {

@@ -18,7 +18,7 @@
     width: 350px;
     height: 350px;
     border: 10px solid rgba(195, 44, 62, 0.2);
-    background-color: #D9D9D9;
+    background-color: var(--bgGrey);
     transition: all 0.5s ease;
 }
 
@@ -31,10 +31,7 @@
         width: 325px;
         height: 325px;
     }
-
 }
-
-
 
 .faq-main .faq-container ul>li {
     padding: 15px 15px;
@@ -54,15 +51,12 @@
 .answer {
     color: #333333;
     transition: all 0.5s ease;
-
 }
 
 .faq-main .faq-container ul>li .answer {
     max-height: 0px;
-    /* display: none; */
     overflow: hidden;
     transition: all 0.5s ease;
-    /* padding: 0px 45px; */
 }
 
 .faq-main .faq-container ul>.faq-active {
@@ -72,11 +66,8 @@
 }
 
 .faq-main .faq-container ul>.faq-active .answer {
-    /* padding: 10px 45px; */
-    /* display: block; */
     max-height: 100px;
     transition: all 0.5s ease;
-
 }
 
 .faq-main .help-container {
@@ -100,14 +91,13 @@
 
 .faq-main .help-container>div {
     height: 250px;
-    background-color: #252A3414;
+    background-color: var(--textPrimaryWithOpacity);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 25px;
     gap: 10px;
-
 }
 
 .faq-main .help-container>div>div {
@@ -121,7 +111,6 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-
 }
 
 .faq-main .help-container>div>div>img {

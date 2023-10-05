@@ -5,13 +5,6 @@
     margin: 30px 0px;
 }
 
-
-.grey-container {
-    height: 250px;
-    width: 100%;
-    background-color: #D9D9D9;
-}
-
 .about-main .gallery-section>div:nth-child(2) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

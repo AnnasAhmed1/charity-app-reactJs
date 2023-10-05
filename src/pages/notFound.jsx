@@ -9,7 +9,7 @@ const NotFound = () => {
       <main>
         <Navbar light />
         <section className="main-section  notFound-section">
-          <img src={require("../assets/404.png")} alt="" />
+          <img src={require("../assets/404.png")} alt="not_found" />
         </section>
       </main>
       <FooterComp />

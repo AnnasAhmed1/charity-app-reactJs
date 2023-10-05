@@ -1,22 +1,15 @@
-import React, { useEffect } from "react";
-import PageHead from "../components/pageHead";
-import FooterComp from "../components/footerComp";
-import { H2, H6 } from "../helper/heading";
-import PersonIcon from "@mui/icons-material/Person";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import GoogleIcon from "@mui/icons-material/Google";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-// import PersonIcon from "@mui/icons-material/Person";
-import "../styles/pages/blog.css";
-import { P1, P2, P3, P4 } from "../helper/paragraph";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import PersonIcon from "@mui/icons-material/Person";
+import React, { useEffect } from "react";
+import BlogLoginComp from "../components/blogLoginComp";
+import FooterComp from "../components/footerComp";
+import PageHead from "../components/pageHead";
 import TestimonialsSection from "../components/testimonialsSection";
 import { scrollToSection } from "../config/function";
-import { Select } from "antd";
-import TestimonialCard from "../components/testimonialCard";
+import { H2, H6 } from "../helper/heading";
+import { P2, P3, P4 } from "../helper/paragraph";
+import "../styles/pages/blog.css";
 
 const Blog = () => {
   const categories = [
@@ -46,7 +39,6 @@ const Blog = () => {
     { title: "This Week’s Top Stories About....", category: "Medical" },
     { title: "Why You Should Focus on Charity", category: "Food" },
   ];
-
   const tags = [
     { title: "Food" },
     { title: "Medical" },
@@ -55,9 +47,9 @@ const Blog = () => {
     { title: "Education" },
     { title: "Water" },
   ];
-  // useEffect(() => {
-  //   scrollToSection();
-  // }, []);
+  useEffect(() => {
+    scrollToSection();
+  }, []);
   return (
     <>
       <main className="blog-main">
@@ -90,7 +82,7 @@ const Blog = () => {
                     Alewife, poacher airbreathing catfish; zebra tilapia northern pearleye naked-back knifefish pupfish
                     dojo loach, “snake mackerel bonytail chub arapaima horsefish weasel shark.”"
                     style={{
-                      color: "#666666",
+                      color: "var(--customDarkGrey)",
                     }}
                   />
                   <P3
@@ -100,7 +92,7 @@ const Blog = () => {
                     Atlantic cod, “driftwood catfish chimaera ribbonfish, marblefish worm eel smelt mora gray
                     reef shark scabbard fish.”"
                     style={{
-                      color: "#666666",
+                      color: "var(--customDarkGrey)",
                     }}
                   />
                 </div>
@@ -110,7 +102,7 @@ const Blog = () => {
                     text="Less time collecting water means more time in class. Clean water and proper toilets at school means
                     teenage girls don’t have to stay home for a week out of every month."
                     style={{
-                      color: "#666666",
+                      color: "var(--customDarkGrey)",
                     }}
                   />
                   <P3
@@ -121,7 +113,7 @@ const Blog = () => {
                     bent-tooth eel stargazer grunion spookfish yellowtail Quillfish slickhead mora. Springfish
                     worm mackerel sockeye salmon banjo catfish toadfish sauger four-eyed fish"
                     style={{
-                      color: "#666666",
+                      color: "var(--customDarkGrey)",
                     }}
                   />
                 </div>
@@ -140,7 +132,7 @@ const Blog = () => {
                     text="Best quality only happens when you care enough to do your best. Steer companies away from risky
                     denounce with righteous indignation who are so beguiled and demoralized by pleasure of the"
                     style={{
-                      color: "#666666",
+                      color: "var(--customDarkGrey)",
                     }}
                   />
                   <P3
@@ -149,7 +141,7 @@ const Blog = () => {
                     airbreathing catfish; zebra tilapia northern pearleye naked-back knifefish pupfish dojo loach.
                     mackerel bonytail chub arapaima horsefish weasel shark.”"
                     style={{
-                      color: "#666666",
+                      color: "var(--customDarkGrey)",
                     }}
                   />
                   <P3
@@ -158,7 +150,7 @@ const Blog = () => {
                     blackfish Port Jackson shark Atlantic saury. Sacramento blackfish pricklefish, Atlantic cod, “driftwood
                     catfish chimaera ribbonfish, marblefish worm eel smelt mora gray reef shark scabbard fish.”"
                     style={{
-                      color: "#666666",
+                      color: "var(--customDarkGrey)",
                     }}
                   />
                 </div>
@@ -229,206 +221,7 @@ const Blog = () => {
                 </div>
               </section>
             </div>
-            <section className="blog-login-section">
-              <div>
-                <P4 text="0 Comments" />
-                <P4 text="themefisher" />
-                <P4
-                  text="Privacy Policy"
-                  style={{
-                    flex: 1,
-                  }}
-                />
-                <p
-                  className="helper-p4"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    padding: "0px 20px",
-                  }}
-                >
-                  <span
-                    style={{
-                      borderRadius: "50%",
-                      padding: "0 5px",
-                      backgroundColor: "var(--primary)",
-                      color: "var(--light)",
-                      fontSize: "12px",
-                    }}
-                  >
-                    1
-                  </span>
-                  <Select
-                    defaultValue="Login"
-                    color="white"
-                    style={{
-                      width: "fit-content",
-                      backgroundColor: "transparent",
-                      color: "white",
-                    }}
-                    dropdownStyle={{
-                      color: "white",
-                      width: 80,
-                    }}
-                    bordered={false}
-                    options={[
-                      {
-                        value: "Login",
-                        label: "Login",
-                      },
-                      {
-                        value: "Signup",
-                        label: "Signup",
-                      },
-                    ]}
-                  />
-                </p>
-              </div>
-              <div>
-                <p className="helper-p4">
-                  <FavoriteBorderIcon style={{ color: "var(--primary)" }} />
-                  Favorite
-                </p>
-                <p
-                  className="helper-p4"
-                  style={{
-                    color: "var(--light)",
-                    backgroundColor: "#01ACED",
-                  }}
-                >
-                  <TwitterIcon />
-                  Tweet
-                </p>
-                <p
-                  className="helper-p4"
-                  style={{
-                    color: "var(--light)",
-                    backgroundColor: "#3B5998",
-                  }}
-                >
-                  <FacebookIcon />
-                  Share
-                </p>
-                <p
-                  style={{
-                    flex: 1,
-                  }}
-                ></p>
-                <p
-                  className="helper-p4"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    padding: "0px 20px",
-                  }}
-                >
-                  {/* <span
-                    style={{
-                      borderRadius: "50%",
-                      padding: "0 5px",
-                      backgroundColor: "var(--primary)",
-                      color: "var(--light)",
-                      fontSize: "12px",
-                    }}
-                  >
-                    1
-                  </span> */}
-                  <Select
-                    defaultValue="Sort by Best"
-                    color="white"
-                    style={{
-                      width: "fit-content",
-                      backgroundColor: "transparent",
-                      color: "white",
-                    }}
-                    dropdownStyle={{
-                      color: "white",
-                      width: "fit-content",
-                    }}
-                    bordered={false}
-                    options={[
-                      {
-                        value: "Sort by Best",
-                        label: "Sort by Best",
-                      },
-                      {
-                        value: "Sort by Latest",
-                        label: "Sort by Latest",
-                      },
-                    ]}
-                  />
-                </p>
-              </div>
-              <div
-                style={{
-                  gap: "10px",
-                }}
-              >
-                <label htmlFor="discussion">
-                  <PersonIcon
-                    fontSize="large"
-                    style={{
-                      color: "var(--textLight)",
-                      backgroundColor: "#eeeeee",
-                    }}
-                  />
-                </label>
-                <input
-                  type="text"
-                  id="discussion"
-                  placeholder="Start the discussion"
-                />
-              </div>
-              <div
-                style={{
-                  width: "90%",
-                  marginLeft: "auto",
-                }}
-              >
-                <P4 text="LOGIN WITH" />
-                <P4 text="OR SIGN UP WITH DISQUS?" />
-              </div>
-              <div className="login-icons">
-                <div
-                  className="image"
-                  style={{
-                    width: "38px",
-                    height: "38px",
-                    marginTop: "5px",
-                  }}
-                >
-                  <img
-                    style={{
-                      width: "100%",
-                    }}
-                    src={require("../assets/disqus_icon.png")}
-                    alt=""
-                  />
-                </div>
-                <TwitterIcon
-                  style={{
-                    backgroundColor: "#01ACED",
-                  }}
-                />
-                <FacebookIcon
-                  style={{
-                    backgroundColor: "#3B5998",
-                  }}
-                />
-                <GoogleIcon
-                  style={{
-                    backgroundColor: "#E63343",
-                  }}
-                />
-                <input
-                  style={{
-                    padding: "5px 3px",
-                  }}
-                  type="text"
-                  placeholder="name"
-                />
-              </div>
-            </section>
+            <BlogLoginComp />
           </section>
         </div>
       </main>

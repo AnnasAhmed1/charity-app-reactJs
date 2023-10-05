@@ -1,17 +1,15 @@
 import React, { useEffect } from "react";
-import Navbar from "../components/navbar";
-import { H2, H5 } from "../helper/heading";
-import { P1 } from "../helper/paragraph";
 import AboutSection from "../components/aboutSection";
 import CharitySection from "../components/charitySection";
-import Funfacts from "../components/funfacts";
-import TestimonialsSection from "../components/testimonialsSection";
-import SubHeading from "../components/subHeading";
 import FeatureCard from "../components/featureCard";
-import "../styles/pages/about.css";
 import FooterComp from "../components/footerComp";
+import Funfacts from "../components/funfacts";
 import PageHead from "../components/pageHead";
+import SubHeading from "../components/subHeading";
+import TestimonialsSection from "../components/testimonialsSection";
 import { scrollToSection } from "../config/function";
+import { H2 } from "../helper/heading";
+import "../styles/pages/about.css";
 
 const About = () => {
   const featureData = [
@@ -49,6 +47,7 @@ const About = () => {
               {featureData?.map((feature, index) => {
                 return (
                   <FeatureCard
+                    key={index}
                     image={feature.image}
                     heading={feature.heading}
                     itemsCount={feature.itemsCount}

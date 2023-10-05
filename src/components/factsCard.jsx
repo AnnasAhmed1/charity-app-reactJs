@@ -7,7 +7,6 @@ const FactsCard = ({
   bottomText = "",
   bgColor = "rgba(37, 42, 52, 0.08)",
   percentage = "",
-  animatedRef,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -20,26 +19,25 @@ const FactsCard = ({
           (window.innerHeight || document.documentElement.clientHeight)
       );
     }
-
+  
     function handleScroll() {
-      const factCard = document.getElementById("fact-card"); // Replace with your card's ID
+      const factCard = document.getElementById("fact-card");
       if (isElementInViewport(factCard)) {
         if (!isVisible) {
           setIsVisible(true);
         }
       } else {
         if (isVisible) {
-          setIsVisible(false); // Reset the animation when the section becomes inactive
+          setIsVisible(false);
         }
       }
     }
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isVisible]); // Add isVisible to the dependency array to watch for changes
+  }, [isVisible]);
 
   const divStyle = {
     animation: isVisible ? "fill-3 1s ease-in-out" : "none",
@@ -89,13 +87,9 @@ const FactsCard = ({
             <img
               style={{
                 width: "100%",
-
-                // position:"absolute",
-                // top:"0px",
-                // bottom:"0px",
               }}
               src={require(`../assets/${image}.png`)}
-              alt=""
+              alt={image}
             />
           </div>
         </div>

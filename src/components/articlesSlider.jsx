@@ -74,25 +74,27 @@ const ArticlesSlider = () => {
       },
     ],
   };
+
+  const arrowStyle = {
+    position: "absolute",
+    top: "-40px",
+    color: "var(--dark)",
+    cursor: "pointer",
+    backgroundColor: "var(--bgGrey)",
+    borderRadius: "50%",
+    padding: "5px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
   function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
+    const { onClick } = props;
     return (
       <button
         style={{
-          position: "absolute",
           right: "60px",
-          top: "-40px",
-          color: "var(--dark)",
-          cursor: "pointer",
-
-          backgroundColor: "#D9D9D9",
-          borderRadius: "50%",
-          padding: "5px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          ...arrowStyle,
         }}
-        className="custom-arrow custom-prev-arrow"
         onClick={onClick}
       >
         <KeyboardArrowLeftIcon
@@ -104,23 +106,13 @@ const ArticlesSlider = () => {
     );
   }
   function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
+    const { onClick } = props;
     return (
       <button
         style={{
-          position: "absolute",
           right: "10px",
-          top: "-40px",
-          cursor: "pointer",
-          color: "var(--dark)",
-          backgroundColor: "#D9D9D9",
-          borderRadius: "50%",
-          padding: "5px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          ...arrowStyle,
         }}
-        className="custom-arrow custom-prev-arrow"
         onClick={onClick}
       >
         <ChevronRightIcon
@@ -133,14 +125,7 @@ const ArticlesSlider = () => {
   }
 
   return (
-    <div
-      className="articles-container articles-slider"
-      style={
-        {
-          // margin: "30px",
-        }
-      }
-    >
+    <div className="articles-container articles-slider">
       <Slider {...settings}>
         {articlesData?.map((article, index) => {
           return (

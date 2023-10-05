@@ -8,11 +8,10 @@ const PageHead = ({ page = "", subNav }) => {
   return (
     <section className="bgGray relative section1" id="top">
       <div className="trapezium absolute"></div>
-
       <img
         src={require("../assets/patch.png")}
         className="absolute patch-image"
-        alt=""
+        alt="background_patch"
       />
       <Navbar />
       <div className="main-section container">
@@ -25,14 +24,6 @@ const PageHead = ({ page = "", subNav }) => {
             margin: "0 auto",
           }}
         />
-        {/* <P1
-          text={`Home / ${subNav ? subNav : page}`}
-          nunito
-          center
-          color="light"
-          underline
-          fontWeight="500"
-        /> */}
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Link to={"/"}>
             <P1

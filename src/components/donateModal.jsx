@@ -12,13 +12,12 @@ const DonateModal = ({ open, setOpen }) => {
     left: "50%",
     transform: "translate(-50%, -50%)",
     bgcolor: "#F1F1F1",
-    border: "2px solid #000",
+    border: "2px solid var(--dark)",
     boxShadow: 24,
     p: 4,
     overflow: "scroll",
     height: "100%",
   };
-  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
     <Modal
@@ -180,7 +179,7 @@ const DonateModal = ({ open, setOpen }) => {
             <input type="checkbox" id="terms" name="checkbox" value="1" />
             <label htmlFor="terms"> Agree to Terms?</label>
           </div>
-          <div style={{}} className="total-donation-container">
+          <div className="total-donation-container">
             <input
               type="text"
               value={"Donation Total:"}

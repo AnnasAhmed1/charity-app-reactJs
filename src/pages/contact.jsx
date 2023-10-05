@@ -64,7 +64,7 @@ const Contact = () => {
               <H2 text="Address" />
               <P4
                 style={{
-                  color: "#666666",
+                  color: "var(--customDarkGrey)",
                 }}
                 text="Quam elementum pulvinar etiam non quam lacus
             suspendisse.A scelerisque purus semper eget duis at

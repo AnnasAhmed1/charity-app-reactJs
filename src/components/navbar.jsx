@@ -5,15 +5,38 @@ import "../styles/component.css";
 import "../styles/global.css";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-// import { DownOutlined, SmileOutlined } from "@ant-design/icons";
-import { Drawer, Dropdown, Select, Space } from "antd";
+import { Drawer, Dropdown, Select } from "antd";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = ({ home = false, light = false }) => {
   const location = useLocation();
+  const [open, setOpen] = useState(false); //search drawer
+  const [anchorEl, setAnchorEl] = useState(null);
+  const navOpen = Boolean(anchorEl);
+  const activeNav = null;
+  const navs = [
+    {
+      label: "Home",
+      to: "/",
+    },
+    {
+      label: "Causes",
+      to: "/causes",
+    },
+    {
+      label: "About",
+      to: "/about",
+    },
+    {
+      label: "Pages",
+    },
+    {
+      label: "Blogs",
+      to: "/blog",
+    },
+  ];
   const pages = [
     {
       key: "1",
@@ -88,53 +111,19 @@ const Navbar = ({ home = false, light = false }) => {
       ),
     },
   ];
-  const languages = [
-    { key: "1", label: "En" },
-    { key: "2", label: "Es" },
-    { key: "3", label: "Fr" },
-  ];
-  const [open, setOpen] = useState(false);
-
   const showDrawer = () => {
     setOpen(true);
   };
   const onClose = () => {
     setOpen(false);
   };
-  const [anchorEl, setAnchorEl] = useState(null);
-  const navOpen = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const [activeNav, setActiveNav] = useState(null);
-  const navs = [
-    {
-      label: "Home",
-      to: "/",
-    },
-    {
-      label: "Causes",
-      to: "/causes",
-    },
-    {
-      label: "About",
-      to: "/about",
-    },
-    {
-      label: "Pages",
-      // to: "",
-    },
-    {
-      label: "Blogs",
-      to: "/blog",
-    },
-  ];
-  // const handleActiveNav = (nav) => {
-  //   setActiveNav(nav);
-  // };
+
   return (
     <nav className={`navbar ${!light ? "transparent" : null}`}>
       <Drawer
@@ -182,149 +171,43 @@ const Navbar = ({ home = false, light = false }) => {
           "aria-labelledby": "basic-button",
         }}
       >
-        {/* <ul className="flex hide-tablet"> */}
-        <MenuItem
-          onClick={handleClose}
-          sx={{
-            width: "120px",
-          }}
-        >
+        {[
+          { label: "Home", path: "/", activeNav: "Home" },
+          { label: "Causes", path: "/causes", activeNav: "Causes" },
+          { label: "About", path: "/about", activeNav: "About" },
+          { label: "Contact", path: "/contact", activeNav: "Contact" },
+          { label: "FAQ", path: "/faq", activeNav: "FAQ" },
+          { label: "Blogs", path: "/blog", activeNav: "Blogs" },
+          { label: "Donate", path: "/donate", activeNav: "Donate" },
+          { label: "Elements", path: "/element", activeNav: "Elements" },
+          { label: "404 error", path: "/404", activeNav: "404 error" },
+        ].map((item) => (
           <Link
-            to={"/"}
-            className={`helper-p3 ${activeNav == "Home" ? "nav-active" : null}`}
-          >
-            Home
-          </Link>
-        </MenuItem>
-        {home ? (
-          <>
-            <MenuItem onClick={handleClose}>
-              <Link
-                to={"/causes"}
-                className={`helper-p3 ${
-                  activeNav == "Causes" ? "nav-active" : null
-                }`}
-              >
-                Causes
-              </Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link
-                to={"/about"}
-                className={`helper-p3 ${
-                  activeNav == "About" ? "nav-active" : null
-                }`}
-              >
-                About
-              </Link>
-            </MenuItem>
-          </>
-        ) : (
-          <>
-            <MenuItem onClick={handleClose}>
-              <Link
-                to={"/about"}
-                className={`helper-p3 ${
-                  activeNav == "About" ? "nav-active" : null
-                }`}
-              >
-                About
-              </Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link
-                to={"/causes"}
-                className={`helper-p3 ${
-                  activeNav == "Causes" ? "nav-active" : null
-                }`}
-              >
-                Causes
-              </Link>
-            </MenuItem>
-          </>
-        )}
-        <MenuItem onClick={handleClose}>
-          <Link
-            to={"/contact"}
+            key={item.path}
+            to={item.path}
             className={`helper-p3 ${
-              activeNav == "Contact" ? "nav-active" : null
+              activeNav === item.activeNav ? "nav-active" : null
             }`}
           >
-            Contact
+            <MenuItem onClick={handleClose}>{item.label}</MenuItem>
           </Link>
-          {/* <KeyboardArrowDownIcon /> */}
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link
-            to={"/faq"}
-            className={`helper-p3 ${activeNav == "FAQ" ? "nav-active" : null}`}
-          >
-            FAQ
-          </Link>
-          {/* <KeyboardArrowDownIcon /> */}
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link
-            to={"/blog"}
-            className={`helper-p3 ${
-              activeNav == "Blogs" ? "nav-active" : null
-            }`}
-          >
-            Blogs
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link
-            to={"/donate"}
-            className={`helper-p3 ${
-              activeNav == "Blogs" ? "nav-active" : null
-            }`}
-          >
-            Donate
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link
-            to={"/element"}
-            className={`helper-p3 ${
-              activeNav == "Blogs" ? "nav-active" : null
-            }`}
-          >
-            Elements
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link
-            to={"/*"}
-            className={`helper-p3 ${
-              activeNav == "Blogs" ? "nav-active" : null
-            }`}
-          >
-            404 error
-          </Link>
-        </MenuItem>
-        {/* </ul> */}
-        {/* <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem> */}
+        ))}
       </Menu>
       <Link to={"/"}>
         <img
           src={require(`../assets/${light ? "logo_black" : "logo"}.png`)}
-          alt=""
+          alt="logo"
         />
       </Link>
       <ul className="flex hide-tablet">
         {navs?.map((nav, index) => {
           return (
             <Link
+              key={index}
               to={nav.to}
               className={`helper-p3 ${
                 location.pathname === nav.to ? "nav-active" : null
               }`}
-              // onClick={() => {
-              //   handleActiveNav(nav.label);
-              // }}
             >
               {nav.label !== "Pages" ? (
                 nav.label
@@ -338,10 +221,9 @@ const Navbar = ({ home = false, light = false }) => {
                   }}
                   arrow
                 >
-                  {/* <DownOutlined /> */}
                   <div
                     className={`helper-p3 flex ${
-                      activeNav == "" ? "nav-active" : null
+                      activeNav === "" ? "nav-active" : null
                     }`}
                     style={{
                       display: "flex",
@@ -405,7 +287,9 @@ const Navbar = ({ home = false, light = false }) => {
           <SearchIcon />
         </button>
         <button onClick={handleClick} className="show-tablet">
-          <MenuIcon style={{ color: !light ? "#ffffff" : "#000000" }} />
+          <MenuIcon
+            style={{ color: !light ? "var(--light)" : "var(--dark)" }}
+          />
         </button>
       </div>
     </nav>

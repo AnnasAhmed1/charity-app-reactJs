@@ -12,9 +12,13 @@
 :root {
     --primary: #C32C3E;
     --textPrimary: #252A34;
+    --textPrimaryWithOpacity: #252A3414;
     --textLight: #AFAFAF;
+    --bgGrey: #D9D9D9;
+    --customDarkGrey: #666666;
     --light: #ffffff;
     --dark: #000000;
+
 }
 
 #root {
